@@ -9,3 +9,9 @@ Sofía Vinocur - 32 años - Música y actriz, Asesora educativa.
 Ignacio Maisterrena - 17 años - Estudiante. 
 Santiago Fontana - 18 años - Estudiante. 
 
+links:
+https://www.comoquieres.com.ar/: nos gustó el link a las historias de instagram, con promociones y productos.
+https://www.zara.com/ar/: nos gustó el logo estático 
+https://indumentariaduo2.mitiendanube.com/productos/?mpage=2: columna lateral.
+https://www.hollisterco.com/shop/wd-es: nos gustó la combinación de colores y nos pareció que tenian claro el público al que apuntan.
+https://www.salomonstore.com.ar/: fondo gris oscuro y la incorporación de la imágen principal a la página (degradado del borde inferior)
