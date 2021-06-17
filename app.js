@@ -23,4 +23,7 @@ app.get('/register', (req, res) => {
     let registerPath = path.resolve(__dirname, './views/register.html');
     res.sendFile(registerPath);
 })
-
+app.get('/productDetail', (req, res) => {
+    let registerPath = path.resolve(__dirname, './views/productDetail.html');
+    res.sendFile(registerPath);
+})
