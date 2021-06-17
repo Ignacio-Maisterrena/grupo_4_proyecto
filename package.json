@@ -1,0 +1,22 @@
+{
+  "name": "grupo_4_proyecto",
+  "version": "1.0.0",
+  "description": "Descripción del sitio: Nuestro stio web brindará un catálogo de productos de vestimenta para jóvenes. Y apunta personas de entre 15 a 40 años aproximadamente. Para ajustarnos a ese público, ofreceremos una experiencia dinámica en la que el usuario pueda acceder a las prendas que busca y facilitar el proceso de compra.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ignacio-Maisterrena/grupo_4_proyecto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ignacio-Maisterrena/grupo_4_proyecto/issues"
+  },
+  "homepage": "https://github.com/Ignacio-Maisterrena/grupo_4_proyecto#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
