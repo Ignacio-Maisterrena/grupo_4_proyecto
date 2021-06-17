@@ -87,84 +87,84 @@ header .boton-mobile{
 }
 
 
-header footer{
+ footer{
     color: white;
     width: 100%;
     background: #202020;
 }
 
-header .container-footer-all{   
+footer .container-footer-all{   
   width: 100%;  
   max-width: 1200px;
   padding:40px;
 }
 
-header .container-body{
+footer .container-body{
     display: flex;
     justify-content: space-between;
 }
 
-header .column1{
+footer .column1{
     max-width: 400px;
 }
 
-header .column1 h1{
+footer .column1 h1{
     font-size: 22px;
 }
 
-header .column1 p{
+footer .column1 p{
     font-size: 14px;
     color: #c7c7c7;
     margin-top: 20px;
 }
   
-header .column2{
+footer .column2{
     max-width: 400px;
 
 }
 
-header .column2 h1{
+footer .column2 h1{
     font-size: 22px;    
 }
 
 
-header .column2 .row{
+footer .column2 .row{
     margin-top:  20px;    
     display: flex;
 }
 
-header .row img{
+footer .row img{
     width: 36px;
     height: 36px;
 }
 
-header .row label{
+footer .row label{
     margin-top: 10px;
     margin-left: 20px;
     color: #c7c7c7;
 }
 
-header .column3{
+footer .column3{
     max-width: 400px;
 }
 
-header .column3 h1{
+footer .column3 h1{
     font-size: 22px;       
 }
 
-header .row2{
+footer .row2{
         display: flex;
         margin-top: 20px;
 }
 
-header .row2 label{
+footer .row2 label{
     margin-top: 10px;
     margin-left: 20px;
     max-width: 150px;
     
 }
 
-header .container-footer{
+footer .container-footer{
 width: 80%;
 background-color: #101010 ;
 display: flex;
