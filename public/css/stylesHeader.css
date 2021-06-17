@@ -58,12 +58,12 @@ header ul li a:hover{
     border-bottom: 4px solid #DD4F4F;
 }
 
-.boton-mobile{
+header .boton-mobile{
     display: none;
 }
 
 @media (max-width: 1080px){ 
-    .boton-mobile{
+    header .boton-mobile{
         display: inline;
         color: white;
         font-weight: 600;
@@ -87,84 +87,84 @@ header ul li a:hover{
 }
 
 
-footer{
+header footer{
     color: white;
     width: 100%;
     background: #202020;
 }
 
-.container-footer-all{   
+header .container-footer-all{   
   width: 100%;  
   max-width: 1200px;
   padding:40px;
 }
 
-.container-body{
+header .container-body{
     display: flex;
     justify-content: space-between;
 }
 
-.column1{
+header .column1{
     max-width: 400px;
 }
 
-.column1 h1{
+header .column1 h1{
     font-size: 22px;
 }
 
-.column1 p{
+header .column1 p{
     font-size: 14px;
     color: #c7c7c7;
     margin-top: 20px;
 }
   
-.column2{
+header .column2{
     max-width: 400px;
 
 }
 
-.column2 h1{
+header .column2 h1{
     font-size: 22px;    
 }
 
 
-.column2 .row{
+header .column2 .row{
     margin-top:  20px;    
     display: flex;
 }
 
-.row img{
+header .row img{
     width: 36px;
     height: 36px;
 }
 
-.row label{
+header .row label{
     margin-top: 10px;
     margin-left: 20px;
     color: #c7c7c7;
 }
 
-.column3{
+header .column3{
     max-width: 400px;
 }
 
-.column3 h1{
+header .column3 h1{
     font-size: 22px;       
 }
 
-.row2{
+header .row2{
         display: flex;
         margin-top: 20px;
 }
 
-.row2 label{
+header .row2 label{
     margin-top: 10px;
     margin-left: 20px;
     max-width: 150px;
     
 }
 
-.container-footer{
+header .container-footer{
 width: 80%;
 background-color: #101010 ;
 display: flex;
