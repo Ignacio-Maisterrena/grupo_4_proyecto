@@ -22,11 +22,14 @@ app.get('/login', (req, res) => {
 app.get('/register', (req, res) => {
     let registerPath = path.resolve(__dirname, './views/register.html');
     res.sendFile(registerPath);
-<<<<<<< HEAD
-=======
 })
 app.get('/productDetail', (req, res) => {
     let registerPath = path.resolve(__dirname, './views/productDetail.html');
     res.sendFile(registerPath);
->>>>>>> c223e041a4fa0314f1a81f7b1a1a3dbe165e3820
+
+})
+app.get('/header', (req, res) => {
+    let registerPath = path.resolve(__dirname, './views/header.html');
+    res.sendFile(registerPath);
+
 })
