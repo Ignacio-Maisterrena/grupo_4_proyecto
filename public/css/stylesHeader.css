@@ -116,6 +116,7 @@ footer{
     font-size: 14px;
     color: #c7c7c7;
     margin-top: 20px;
+    display: flex;
 }
   
 .column2{
@@ -129,7 +130,7 @@ footer{
 
 
 .column2 .row{
-    margin-top:  20px;    
+    margin-top:  30px;    
     display: flex;
 }
 
@@ -140,12 +141,13 @@ footer{
 
 .row label{
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: 0px;
     color: #c7c7c7;
 }
 
 .column3{
     max-width: 400px;
+    display: flex∫;
 }
 
 .column3 h1{
@@ -153,23 +155,27 @@ footer{
 }
 
 .row2{
-        display: flex;
-        margin-top: 20px;
+    position: relative;
+    margin-top: 40px;
 }
 
 .row2 label{
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: 0px;
     max-width: 150px;
     
 }
 
 .container-footer{
-width: 80%;
+width: 100%;
 background-color: #101010 ;
-display: flex;
-padding:20px;
+display: block;
+padding:20px 0px;
 justify-content: space-between;
 font-size: 14px;
-margin-left: 10px ;
+margin-left: 0px ;
+}
+
+.copyright{
+    margin-left: 40px;
 }
