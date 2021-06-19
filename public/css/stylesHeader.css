@@ -179,3 +179,10 @@ margin-left: 0px ;
 .copyright{
     margin-left: 40px;
 }
+
+
+.banner{
+    width: 100%;
+    margin: auto;
+    display: flex;
+}
