@@ -5,7 +5,7 @@ const publicPath = path.resolve(__dirname, './public');
 const app = express();
 app.use( express.static(publicPath));
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000,()=>{
     console.log('El servoidor está corriendo en el puerto 3000');
 });
 
