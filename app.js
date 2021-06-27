@@ -5,7 +5,7 @@ const publicPath = path.resolve(__dirname, './public');
 const app = express();
 app.use( express.static(publicPath));
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000,()=>{
     console.log('El servoidor está corriendo en el puerto 3000');
 });
 
@@ -26,6 +26,7 @@ app.get('/register', (req, res) => {
 app.get('/productDetail', (req, res) => {
     let registerPath = path.resolve(__dirname, './views/productDetail.html');
     res.sendFile(registerPath);
+
 })
 app.get('/header', (req, res) => {
     let registerPath = path.resolve(__dirname, './views/header.html');
