@@ -191,3 +191,24 @@ img{
     width:100%;
     height:100%;
 }
+
+
+@media (max-width :1200px){
+    .container-footer-all{
+      max-width: 70%;
+    }
+  }
+
+  @media (max-width :800px){
+    .container-footer-all{
+        font-size: 10px;
+    }
+    
+  }
+
+  @media (max-width :500px){
+    .column1 p{
+        font-size: 5px;
+    }
+    
+  }
