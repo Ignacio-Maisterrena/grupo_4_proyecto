@@ -52,22 +52,88 @@
     border:#CCCCCC 1px solid;
 }
 */
-
+main{
+    margin: 15px 50px;
+}
 .contenedor{
     display: flex;
 }
+
+/*
+VER
+*/
+.ver{
+    justify-content: space-between;
+    position: relative;
+    height: 821px;
+    box-shadow: 0px 0px 10px rgb(100 100 100);
+}
+.cajaMujer{
+    width: 50%;
+    
+    
+    position: relative;
+}
+.cajaHombre{
+    width: 50%;
+    
+    
+    position: relative;
+}
+.fotoMujer{
+    width: 100%;
+    height: 100%;
+}
+.fotoHombre{
+    width: 100%;
+    height: 100%;
+}
+.hombre{
+    position: absolute;
+    left:  15px;
+    bottom: 20px;
+    font-weight: 600;
+    font-size: 25px;
+    background-color: black;
+    border-radius: 15px;
+    padding: 6px 12px;
+    color: white;
+    
+}
+.mujer{
+    position: absolute;
+    right: 21px;
+    bottom: 20px;
+    font-weight: 600;
+    font-size: 25px;
+    background-color: black;
+    border-radius: 15px;
+    padding: 6px 12px;
+    color: white;
+}
+
+
+
+
+/*
+VER
+*/
+
+/*
+PRODUCTOS
+*/
 .productos{
-    justify-content: space-evenly;
-    margin: 50px 0px;
+    justify-content: space-between;
 }
 
  .productos article{
      width: 30%;
-     border: 4px black solid;
+     box-shadow: 0px 0px 10px rgb(100 100 100);
  } 
  .oferta{
-   margin: auto;
+
    text-align: center;
+   margin: 25px auto;
  }
  .fotoProducto{
      width: 100%;
@@ -86,3 +152,6 @@
     margin-bottom: 10px;
     padding: 10px;
 }
+/*
+PRODUCTOS
+*/
