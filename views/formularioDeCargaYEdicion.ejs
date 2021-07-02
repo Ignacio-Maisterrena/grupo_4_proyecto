@@ -1,0 +1,34 @@
+
+<%- include('partials/head')%>
+<%- include('partials/header')%>
+   
+   <form action="/" method="POST" class="formulario">
+<div class="formulario-carga">
+<div><label for="Descripcion"><input type="text" id="Descripcion" name="Nombre-producto" placeholder="Nombre del producto"></label></div>
+<div><label for="Descripcion"><input type="text" id="Descripcion" name="Descripcion" placeholder="Descripcion"></label></div>
+<div><label for=""><input type="file"></label></div>
+<div><label for="Categoria"><input type="text" id="Categoria" name="Categoria" placeholder="Categoria"></label></div>
+<div><label for="">
+    Colores
+    <input type="checkbox" id="colores" name="colores"> rojo
+    <input type="checkbox" id="colores" name="colores"> azul
+
+</label>
+</div>
+<div class="talles"> 
+    <label for="talles">
+        Talles
+      <div>  <input type="checkbox" id="talles" name="talles"> S </div>
+      <div> <input type="checkbox" id="talles" name="talles"> M </div> 
+      <div> <input type="checkbox" id="talles" name="talles"> L </div>
+    </label>
+</div>
+<div class="formulario-precio">
+    <label for="Precio">
+      <div class="precio"> <input type="text" id="Precio" name="Precio" placeholder="Precio"></div> 
+    </label>
+</div>
+</div>
+
+</form>
+<%- include('partials/footer')%>
