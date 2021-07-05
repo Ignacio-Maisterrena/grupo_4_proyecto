@@ -1,34 +1,82 @@
-
 <%- include('partials/head')%>
-<%- include('partials/header')%>
-   
-   <form action="/" method="POST" class="formulario">
-<div class="formulario-carga">
-<div><label for="Descripcion"><input type="text" id="Descripcion" name="Nombre-producto" placeholder="Nombre del producto"></label></div>
-<div><label for="Descripcion"><input type="text" id="Descripcion" name="Descripcion" placeholder="Descripcion"></label></div>
-<div><label for=""><input type="file"></label></div>
-<div><label for="Categoria"><input type="text" id="Categoria" name="Categoria" placeholder="Categoria"></label></div>
-<div><label for="">
-    Colores
-    <input type="checkbox" id="colores" name="colores"> rojo
-    <input type="checkbox" id="colores" name="colores"> azul
+  <link rel="stylesheet" href="/css/stylesFormularoiCarga.css">
+  <%- include('partials/header')%>
 
-</label>
-</div>
-<div class="talles"> 
-    <label for="talles">
-        Talles
-      <div>  <input type="checkbox" id="talles" name="talles"> S </div>
-      <div> <input type="checkbox" id="talles" name="talles"> M </div> 
-      <div> <input type="checkbox" id="talles" name="talles"> L </div>
-    </label>
-</div>
-<div class="formulario-precio">
-    <label for="Precio">
-      <div class="precio"> <input type="text" id="Precio" name="Precio" placeholder="Precio"></div> 
-    </label>
-</div>
-</div>
+    <main>
+      <form action="/register" method="POST" class="createForm">
+        <div class="controlFormulario">
+          <input class="control" type="text" name="nombre" id="nombre" placeholder="Nombre del producto" required>
+        </div>
 
-</form>
-<%- include('partials/footer')%>
+        <div class="controlFormulario">
+          <input class="control" type="text" name="descripcion" id="descripcion" placeholder="descripcion">
+        </div>
+
+        <div class="controlFormulario" id="foto">
+          <h3>Seleccione una foto del producto</h3>
+          <input type="file" name="foto">
+        </div>
+
+        <div class="controlFormulario">
+          <input class="control" type="text" name="categria" id="categria" placeholder="categria" >
+        </div>
+
+        <div class="controlFormulario">
+          <h3>Colores</h3>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Colores" id="rojo" value="rojo">
+            <label for="rojo">Rojo</label>
+          </div>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Colores" id="azul" value="azul">
+            <label for="azul">Azul</label>
+          </div>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Colores" id="negro" value="negro">
+            <label for="negro">Negro</label>
+          </div>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Colores" id="blanco" value="blanco">
+            <label for="blanco">Blanco</label>
+          </div>
+        </div>
+
+        <div class="controlFormulario">
+          <h3>Talles</h3>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Talles" id="XS" value="XS">
+            <label for="XS">XS</label>
+          </div>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Talles" id="S" value="S">
+            <label for="S">S</label>
+          </div>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Talles" id="M" value="M">
+            <label for="M">M</label>
+          </div>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Talles" id="L" value="L">
+            <label for="L">L</label>
+          </div>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Talles" id="XL" value="XL">
+            <label for="XL">XL</label>
+          </div>
+        </div>
+        
+        <button class="button" type="submit">Enviar</button>
+        <button class="button" type="reset">Borrar</button>
+      </form>
+    </main>
+    
+    <%- include('partials/footer')%>

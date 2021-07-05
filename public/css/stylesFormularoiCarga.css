@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+main{
+    background-color: #dfdfdf;
+    margin: 0 !important;
+}
+.contenedor{
+    display: flex;
+    
+}
+
+
+.createForm{
+    padding: 20px 15px;
+}
+.controlFormulario{
+    margin-bottom: 15px;
+}
+.controlFormulario label{
+    margin-bottom: 15px;
+    display: block;
+}
+.control{
+    width: 100%;
+    padding: 8px;
+    border: 0;
+    border-radius: 5px;
+}
+.perfilDeUsuaro{
+    display: span;
+}
+.controlFormulario div{
+    margin: 20px;
+}
+.controlFormulario div label{
+    margin-left: 10px;
+}
+#nacimientos{
+    margin-bottom: 50px;
+}
+#foto h3{
+    display: block;
+}
+#foto input{
+    display: block;
+    
+    width: 100%;
+}
+
+
+.button{
+    background-color: #03264C;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    padding: 5px 10px;
+
+}
