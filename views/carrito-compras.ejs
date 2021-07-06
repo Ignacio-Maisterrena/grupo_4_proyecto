@@ -1,0 +1,64 @@
+  
+
+<%- include('partials/head')%>
+<%- include('partials/header')%>
+  
+
+  <div class="container">
+      <h1>Carrito de Compras</h1>
+        <div class="carrito">
+          <div class="productos">
+            <div class="producto">
+                <img src="images/prenda1.jpg">    
+            <div class="detalles-producto">
+                  <h2 class="nombre-producto">Short Nike M</h2>
+                  <h3 class="precio-producto">1500$</h3>
+                  <h4 class="oferta-producto">30%</h4>
+                  <p class="cantidad">Cantidad: <input value="1" name="">
+                <p class="borrar-producto">
+                 <i class="fas fa-trash"></i>
+                 <span class="borrar">Borrar</span>
+                </div>
+            </div>
+
+            <div class="producto">
+              <img src="images/prenda2.jpg">    
+          <div class="detalles-producto">
+                <h2 class="nombre-producto">Hoodie Rogue XXL</h2>
+                <h3 class="precio-producto">2800$</h3>
+                <h4 class="oferta-producto">15%</h4>
+                <p class="cantidad">Cantidad: <input value="1" name="">
+              <p class="borrar-producto">
+               <i class="fas fa-trash"></i>
+               <span class="borrar">Borrar</span>
+              </div>
+          </div>
+
+
+          </div>
+
+          <div class="total">
+            <p>
+              <span> Total</span>
+              <span>$4300</span>
+            </p>
+            <p>
+              <span>Número de Items</span>
+              <span>2 </span>
+
+            </p>
+
+            <a href="#">Checkout</a>
+            
+
+
+          </div>
+
+
+      </div>
+
+  </div>
+
+
+
+  <%- include('partials/footer')%>

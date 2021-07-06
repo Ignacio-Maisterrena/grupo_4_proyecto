@@ -1,0 +1,82 @@
+<%- include('partials/head')%>
+  <link rel="stylesheet" href="/css/stylesFormularoiCarga.css">
+  <%- include('partials/header')%>
+
+    <main>
+      <form action="/register" method="POST" class="createForm">
+        <div class="controlFormulario">
+          <input class="control" type="text" name="nombre" id="nombre" placeholder="Nombre del producto" required>
+        </div>
+
+        <div class="controlFormulario">
+          <input class="control" type="text" name="descripcion" id="descripcion" placeholder="descripcion">
+        </div>
+
+        <div class="controlFormulario" id="foto">
+          <h3>Seleccione una foto del producto</h3>
+          <input type="file" name="foto">
+        </div>
+
+        <div class="controlFormulario">
+          <input class="control" type="text" name="categria" id="categria" placeholder="categria" >
+        </div>
+
+        <div class="controlFormulario">
+          <h3>Colores</h3>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Colores" id="rojo" value="rojo">
+            <label for="rojo">Rojo</label>
+          </div>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Colores" id="azul" value="azul">
+            <label for="azul">Azul</label>
+          </div>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Colores" id="negro" value="negro">
+            <label for="negro">Negro</label>
+          </div>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Colores" id="blanco" value="blanco">
+            <label for="blanco">Blanco</label>
+          </div>
+        </div>
+
+        <div class="controlFormulario">
+          <h3>Talles</h3>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Talles" id="XS" value="XS">
+            <label for="XS">XS</label>
+          </div>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Talles" id="S" value="S">
+            <label for="S">S</label>
+          </div>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Talles" id="M" value="M">
+            <label for="M">M</label>
+          </div>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Talles" id="L" value="L">
+            <label for="L">L</label>
+          </div>
+
+          <div class="contenedor">
+            <input type="checkbox" name="Talles" id="XL" value="XL">
+            <label for="XL">XL</label>
+          </div>
+        </div>
+        
+        <button class="button" type="submit">Enviar</button>
+        <button class="button" type="reset">Borrar</button>
+      </form>
+    </main>
+    
+    <%- include('partials/footer')%>
