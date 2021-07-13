@@ -24,4 +24,6 @@ router.get('/carga', function(req, res, next) {
   res.render('formularioDeCargaYEdicion');
 });
 
+
+
 module.exports = router;
