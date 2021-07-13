@@ -1,13 +1,24 @@
-main{
-    margin: 15px 50px;
-}
-.contenedor{
-    display: flex;
+*{
+  font-family: roboto, Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+
+
+
 /*
-VER
+HOME
 */
+
+.main_home{
+  margin: 15px 50px;
+}
+.contenedor{
+  display: flex;
+}
+
 .ver{
     justify-content: space-between;
     position: relative;
@@ -61,9 +72,7 @@ VER
 
 
 
-/*
-VER
-*/
+
 
 /*
 PRODUCTOS
@@ -98,6 +107,14 @@ PRODUCTOS
     margin-bottom: 10px;
     padding: 10px;
 }
+
+
+
+
+
+/*
+HEADER
+*/
     
     header{
         width: 100%;
@@ -183,11 +200,20 @@ PRODUCTOS
     
     }
     
-    
+
+
+
+
+
+/*
+FOOTER
+*/    
+
      footer{
         color: white;
         width: 100%;
         background: #202020;
+        justify-content: end;
     }
     
     footer .container-footer-all{   
@@ -283,12 +309,15 @@ PRODUCTOS
 
 
 
+
+/*
+PRODUCT DETAIL
+*/
+
 .caja{
     display: table-cell;
     width: 1000px;
-
 }
-
 
 .caja:nth-child(1){
     
@@ -297,8 +326,7 @@ PRODUCTOS
     background-color:black;
     justify-content: start;
     position: relative;
-    
-   
+      
     
 }
 .caja:nth-child(2){
@@ -362,15 +390,38 @@ PRODUCTOS
 }
 
 
-*{
-    font-family: roboto, Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+
+
+
+
+
+
+/*
+CARRITO
+*/
+
+
+.contenedor-titulo{
+  background-color: rgba(33, 33, 33, 0.03);
+  width: 100%;
+  padding: 30px 30px;
+  margin-bottom: 20px;;
+  
+}
+.contenedor-titulo h1{
+ font-family: LATO;
+  padding-left: 100px;
+}
+
+
   
   .container{
     max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .titulo-pagina{
+    max-width: 100%;
     margin: 0 auto;
   }
   
@@ -501,7 +552,6 @@ PRODUCTOS
   
   
   
-  
       @media (max-width :500px){
         .borrar{
           display:none;
@@ -523,18 +573,39 @@ PRODUCTOS
     .carrito{
      flex-direction: column;
     }
+
+    .contenedor-titulo h1{
+      margin: auto;
+        
+       }
   
     .total{
       margin-left: 0;
       margin-bottom: 20px ;
     }
+           .contenedor-titulo h1{
+            display: flex;
+            justify-content: center; 
+            padding:0px
+             }
   
   }
   @media (max-width :1220px){
         .container{
           max-width: 95%;
         }
+ 
       }
+
+
+
+
+
+
+
+/*
+FORMULARIO LOGIN
+*/
 
 
 .form-login{
@@ -575,6 +646,15 @@ PRODUCTOS
     text-decoration: none;
 }
 
+
+
+
+
+
+/*
+FORMULARIO REGISTRO
+*/
+
 .form-register{
   width: 80%;
   height: 70%;
@@ -605,9 +685,80 @@ PRODUCTOS
   border: 1px solid;
   margin-bottom: 12px;
 }
-
 @media(min-width: 6){
+}
+
+
+
+
+
+/*
+FORMULARIO CARGA
+
+
+
+*{
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+main{
+  background-color: #dfdfdf;
+  margin: 0 !important;
+}
+.contenedor_carga{
+  display: flex;
+  
+}
+
+
+.createForm{
+  padding: 20px 15px;
+}
+.controlFormulario{
+  margin-bottom: 15px;
+}
+.controlFormulario label{
+  margin-bottom: 15px;
+  display: block;
+}
+.control{
+  width: 100%;
+  padding: 8px;
+  border: 0;
+  border-radius: 5px;
+}
+.perfilDeUsuaro{
+  display: span;
+}
+.controlFormulario div{
+  margin: 20px;
+}
+.controlFormulario div label{
+  margin-left: 10px;
+}
+#nacimientos{
+  margin-bottom: 50px;
+}
+#foto h3{
+  display: block;
+}
+#foto input{
+  display: block;
+  
+  width: 100%;
+}
+
+
+.button{
+  background-color: #03264C;
+  border-radius: 5px;
+  border: 0;
+  color: white;
+  padding: 5px 10px;
 
 }
 
 
+*/
