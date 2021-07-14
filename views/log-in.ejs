@@ -1,20 +1,32 @@
 <%- include('partials/head')%>
 <%- include('partials/header')%>
 
+<div class="titulo-pagina"> 
+    <div class="contenedor-titulo"> 
+    <h1>Ingresa</h1>
+    </div>
+    </div>
+
 <section class="form-login">
-    <h5> Bienvenido! </h5>
+    <h4> Bienvenid@ a SIN</h4>
     <form action= "" method= "">
         <div >
             
-            <input class="input-login" type= "email" name= "email" id= "email" placeholder= "email">
+            <input class="input-login" type= "email" name= "email" id= "email" placeholder= "Ingresa tu Email">
         </div>
         <div >
             
-            <input class="input-login" type= "password" name= "contraseña" id= "contraseña" placeholder="contraseña">
+            <input class="input-login" type= "password" name= "contraseña" id= "contraseña" placeholder="Ingresa tu contraseña">
         </div>
         <button class="button" type= "submit"> Iniciar Sesión </button>
+       <div class="checkbox">
+        <input type="checkbox"> <label for="remember">Recuerdame</label>
+       </div>
+       <div class="restore">
+        <a href= "#" class="link-login"> ¿Olvidaste tu contraseña? </a>
+       </div>
     </form>
-    <a href= "#" class="link-login"> ¿Olvidaste tu contraseña? </a>
+   
    </section>
    
 

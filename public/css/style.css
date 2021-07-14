@@ -71,10 +71,6 @@ HOME
 
 
 
-
-
-
-
 .productos{
     justify-content: space-between;
 }
@@ -521,7 +517,7 @@ CARRITO
         margin-left: 20px;
         padding: 20px;
         height: 170px;
-        border: 1px solid silver;
+        border: 1px  silver;
         border-radius: 5px;
       }
   
@@ -607,34 +603,47 @@ FORMULARIO LOGIN
 
 
 .form-login{
-    width: 80%;
-    height: 70%;
-    background-color: grey;
+  
+  display: flex;
+  flex-direction: column;
+    width: 30%;
     padding: 20px 24px;
-    margin: auto;
+    margin: 50px auto;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0,0,0, 0.2);
+    border: 1px solid silver;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.form-login h5{
+.form-login h4{
+  font-size: 25px;
     margin: 0;
     text-align: center;
     margin-top: 13px;
     margin-bottom: 28px;
     border-bottom: 1px solid;
-    font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 20px;
 }
 
 .input-login{
     width: 100%;
-    height: 26px;
-    border: 1px solid;
+    height: 50px;
+    padding: 5px 5px;
+    border: 0px ;
     margin-bottom: 12px;
+    border: 1px solid silver;
+
 }
 
 .form-login .button{
     width: 100%;
-    margin-bottom: 13px;
+    margin-bottom: 25px;
+    height: 50px;
+    background-color: #DD4F4F;
+    color: white;
+    border: 1px solid silver;
+    cursor: pointer;
+
 
 }
 
@@ -644,8 +653,56 @@ FORMULARIO LOGIN
     text-decoration: none;
 }
 
+.form-login .checkbox{
+margin-top: 10px;}
 
 
+.form-login .restore{
+  margin: 20px auto;
+  
+}
+
+
+
+@media (max-width:500px){
+  .form-login{
+      width: 100vw;
+    margin: 0;
+padding: 0;
+flex-direction: column;
+box-shadow: none;
+border: none;
+font-size: 0.75rem;
+      
+  }
+  .form-login .restore{
+    margin: 10px 100px ;
+  }
+
+  .form-login .checkbox{
+margin: 10px 15px; }
+}
+
+
+
+@media (max-width:700px){
+  .form-login{
+  
+     width: 60%;
+    
+  margin: 20px auto;
+}
+  }
+
+  @media (max-width:1250px){
+    .form-login{
+    
+       width: 50%;
+      
+   
+  }
+    }
+  
 
 
 
@@ -656,9 +713,10 @@ FORMULARIO REGISTRO
 .form-register{
   width: 80%;
   height: 70%;
-  background-color: grey;
+  background-color: white;
   padding: 20px 24px;
   margin: auto;
+  border: 1px solid silver;
   font-family: Arial, Helvetica, sans-serif;
 }
 

@@ -18,3 +18,4 @@ const controller = {
         res.render('formularioDeCargaYEdicion')
     }
 }
+
