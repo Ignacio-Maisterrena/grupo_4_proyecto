@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "name": "user 1",
+        "lastName": "user 1 last.name",
+        "email": "email 1",
+        "password": "pass 1",
+        "category": "admin",
+        "image": "imagen 1 user"
+    }
+]
