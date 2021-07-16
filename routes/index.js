@@ -15,7 +15,7 @@ router.get('/log-in', mainController.login);
 router.get('/register', mainController.register);
 
 router.get('/carga', mainController.carga);
-
+/*
 router.get ("/products", mainController.products);
 
 router.get ("/products/create", mainController.productsCreate);
@@ -30,5 +30,5 @@ router.put ("/products/:id", mainController.productsIdEdited);
 
 router.delete ("/products/:id", mainController.productsIdDelete);
 
-
+*/
 module.exports = router;
