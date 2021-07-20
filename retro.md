@@ -24,3 +24,28 @@ Sprint 2:
 4. Hacer menos: Llegar con mejor tiempo a los sprints.
 
 5. Dejar de hacer: dejar de no respetar el punto 1.
+
+Sprint 3
+
+1. Comenzar a hacer: RESPETAR!!! Reuniones los viernes. 19:00hs.
+
+2. Hacer más: Pullear y Pushear siempre. Mejor organización.
+
+3. Continuar haciendo: Buena comunicación y sentido de la autocrítica.
+
+4. Hacer menos: Llegar con mejor tiempo a los sprints.
+
+5. Dejar de hacer: dejar de no respetar el punto 1.
+
+Sprint 4
+
+1. Comenzar a hacer: RESPETAR!!! Reuniones los viernes. 19:00hs.
+
+2. Hacer más: Pullear y Pushear siempre. Mejor organización.
+
+3. Continuar haciendo: Buena comunicación y sentido de la autocrítica.
+
+4. Hacer menos: Llegar con mejor tiempo a los sprints.
+
+5. Dejar de hacer: dejar de no respetar el punto 1.
+
