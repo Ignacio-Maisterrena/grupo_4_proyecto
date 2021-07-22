@@ -1,4 +1,8 @@
 const mainController = {
+
+    intro: function(req, res,next) {
+        res.render('intro')
+    },
     home: function(req, res,next) {
         res.render('home')
     },

@@ -772,6 +772,16 @@ margin: 10px 15px; }
   
   }
 
+  .container-intro{
+    display: block;
+    width: 100%;
+  }
+  
+  .container-intro .menu-intro{
+  display: inline-block;
+  width: 49%;
+  
+  }
 
 
 
@@ -995,3 +1005,18 @@ main{
 
 */
 
+/*
+INTRO
+*/
+
+
+.container-intro{
+  display: block;
+  width: 100%;
+}
+
+.container-intro .menu-intro{
+display: inline-block;
+width: 49%;
+
+}

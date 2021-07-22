@@ -1,0 +1,56 @@
+html{
+box-sizing: border-box;
+}
+
+.img-responsive1{
+    max-width: 100%;
+ overflow: hidden;
+ position: relative;
+ top: 0;
+ right: 0;
+  transition: 0.3s ease-in-out;
+ 
+}
+
+.img-responsive1:hover{
+    transform: scale(120%);
+    right: -120px;
+   z-index: 1;
+}
+
+
+.img-responsive2{
+    max-width: 100%;
+ overflow: hidden;
+ position: relative;
+ top: 0;
+ right: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.img-responsive2:hover{
+    transform: scale(120%);
+    right: +120px;
+    overflow: visible;
+    z-index: 1;
+
+}
+
+
+.container-intro{
+    display: block;
+    width: 100%;
+    margin:0 auto;
+    text-align: center;
+  }
+  
+  .container-intro .menu-intro{
+  display: inline-block;
+  width: 50%;
+  
+  }
+
+  .menu-intro{
+    background-size: cover;
+
+  }
