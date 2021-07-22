@@ -1,67 +1,88 @@
 <%- include('partials/head')%>
 <%- include('partials/header')%>
-<main>     
-    <div class="contenido">
-                
-   <div class="caja">
-    <div class="img">
-     <div class="img1"><img src="/images/mono.jpg" height="150" width="90" alt=""></div>
-     <img src="/images/jean.mujer.jpg" height="150" alt="">
-     <div class="img3"><img src="/images/jean.mujer.jpg" height="150" alt=""></div>
-   </div>
-   </div>
-   <div class="caja">
-                 <div class="img-full"> <img src="/images/jean.mujer.jpg"  height="400" width="400" alt=""></div> 
-                 </div>
 
-   <div class="caja">
- <div class="product">
-     <h3>Nombre del producto</h3>
-                <h5>Precio</h5>
-                        <div class="descripcion-product"> <h4>Descripcion del producto</h4>
-                         <label>Colores<br>
-                         <input type= "radio" name= "color"> Color 1
-                         <input type= "radio" name= "color"> Color 2
-                         <input type= "radio" name= "color"> Color 3
-                         </label>
-                         <label>Talles<br>
-                             <input type= "radio" name= "talle"> Talle 1
-                             <input type= "radio" name= "talle"> Talle 2
-                             <input type= "radio" name= "talle"> Talle 3
-                             </label> <br>
-                           </div>
-                          
-                            <div class="botones">
-                           <button type= "submit">AGREGAR AL CARRITO</button>
-                         <select name="Formas-de-pago">
-                   
-                             <option>Tarjeta de crédito</option>
-                             
-                             <option>Mercado Pago</option>
-                             
-                             <option>Transferencia</option>
-                             
-                             </select>
-                         
-                         <select name="Metodos-de-envio">
-                   
-                             <option>opcion 1</option>
-                             
-                             <option>opcion 2</option>
-                             
-                             <option>opcion 3</option>
-                             
-                             </select>
-                           </div>
-  </div>
-           
-   </div>
-                     
-                  
-       </div>                                             
+<!------ Include the above in your HEAD tag ---------->
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>eCommerce Product Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 
+  </head>
+
+  <body>
+	
+    <div class="titulo-pagina"> 
+      <div class="contenedor-titulo"> 
+      <h1>Detalle de producto</h1>
   
- </main>
+      </div>
+      </div>
+
+	<div class="container">
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+						
+						<div class="preview-pic tab-content">
+						  <div class="tab-pane active" id="pic-1"><img src="../images/prenda1.jpg" /></div>
+						  <div class="tab-pane" id="pic-2"><img src="../images/prenda1.jpg" /></div>
+						  <div class="tab-pane" id="pic-3"><img src="../images/prenda1.jpg"/></div>
+						  <div class="tab-pane" id="pic-4"><img src="../images/prenda1.jpg"/></div>
+						  <div class="tab-pane" id="pic-5"><img src="../images/prenda1.jpg"/></div>
+						</div>
+						<ul class="preview-thumbnail nav nav-tabs">
+						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="../images/prenda1.jpg"/></a></li>
+						  <li><a data-target="#pic-2" data-toggle="tab"><img src="../images/prenda1.jpg"/></a></li>
+						  <li><a data-target="#pic-3" data-toggle="tab"><img src="../images/prenda1.jpg"/></a></li>
+						  <li><a data-target="#pic-4" data-toggle="tab"><img src="../images/prenda1.jpg"/></a></li>
+						  <li><a data-target="#pic-5" data-toggle="tab"><img src="../images/prenda1.jpg"/></a></li>
+						</ul>
+						
+					</div>
+					<div class="details col-md-6">
+						<h3 class="product-title">Pantalon Deportivo</h3>
+						<div class="rating">
+							<div class="stars">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+							<span class="review-no">41 comentarios</span>
+						</div>
+						<p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
+						<h4 class="price">Precio: <span>$1800</span></h4>
+						<p class="vote"><strong>91%</strong> de los compradores disfrutaron este producto! <strong>(87 votos)</strong></p>
+						<h5 class="sizes">Talles:
+							<span class="size" data-toggle="tooltip" title="small">s</span>
+							<span class="size" data-toggle="tooltip" title="medium">m</span>
+							<span class="size" data-toggle="tooltip" title="large">l</span>
+							<span class="size" data-toggle="tooltip" title="xtra large">xl</span>
+						</h5>
+						<h5 class="colors">Colores:
+							<span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+							<span class="color green"></span>
+							<span class="color blue"></span>
+              <span class="color red"></span>
+						</h5>
+						<div class="action">
+							<button class="add-to-cart btn btn-default" type="button">Agregar al carrito</button>
+							<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>
+
  <%- include('partials/footer')%>
