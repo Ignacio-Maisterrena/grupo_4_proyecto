@@ -15,6 +15,8 @@ const authController = {
         usersToCreate.id = 1;
         console.log (saltRounds, req.body)
         usersToCreate.password = bcrypt.hashSync (req.body.password, saltRounds)
+        usersToCreate.password1 = bcrypt.hashSync (req.body.password1, saltRounds)
+
        users.forEach(user => {
            usersToCreate.id = user.id + 1
        });

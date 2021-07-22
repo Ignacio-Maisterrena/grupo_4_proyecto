@@ -1,11 +1,25 @@
 [
-    {
-        "id": 1,
-        "name": "user 1",
-        "lastName": "user 1 last.name",
-        "email": "email 1",
-        "password": "pass 1",
-        "category": "admin",
-        "image": "imagen 1 user"
-    }
+  {
+    "id": 1,
+    "name": "user 1",
+    "lastName": "user 1 last.name",
+    "email": "email 1",
+    "password": "pass 1",
+    "category": "admin",
+    "image": "imagen 1 user"
+  },
+  {
+    "nombre": "nicolas",
+    "email": "nicolasavayu@gmail.com",
+    "password": "$2a$10$zvXHK4CE8Ry30NudcGhI7OuabA1Lnj144sx5vQgj/qqQeeNMuHUiu",
+    "password1": "123",
+    "id": 2
+  },
+  {
+    "nombre": "123",
+    "email": "nicolasavayu@gmail.com",
+    "password": "$2a$10$IRfpG9sMcViL0H4CjM0hR.3HWtN8E1R7NGJUuRLafQgCdhTN.xelW",
+    "password1": "$2a$10$ulYOBbvd7eWzn.0PaTIgTOty97wge5.X5yuXKoMb8IPH/QNJ7MV3i",
+    "id": 3
+  }
 ]
