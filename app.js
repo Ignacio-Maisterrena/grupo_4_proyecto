@@ -9,7 +9,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const authController = require('./routes/auth');
-
+const session = require('express-session');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,6 +29,11 @@ app.use ('/auth', authController)
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+app.use(session({secret: 'secreto'}));
+
+app.use(cookieParser());
+app.use (methodOverride("_method"));
 
 // error handler
 app.use(function(err, req, res, next) {

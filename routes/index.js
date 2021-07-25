@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var mainController = require ('../controllers/mainController');
+const upload = multer ({storage});
 
 
 /* GET home page. */
+router.get('/search', mainController.search);
+
 router.get('/INTRO', mainController.intro);
 
 router.get('/', mainController.home);

@@ -1,4 +1,9 @@
 const mainController = {
+    index: function (req,res) {
+        req.session.ultimaVisita = new Date().toISOString();
+        res.cookies("nombre", "juan");
+        
+    },
 
     intro: function(req, res,next) {
         res.render('intro')
@@ -41,6 +46,9 @@ const mainController = {
     },
     productsIdDelete: function(req, res, next) {
         res.render('productsIdDelete')
+    },
+    search: function (req,res) {
+        return res.send({nombre: req.session.nombre, ultimaVisita: req.session.ultimaVisita})
     },
    
 }
