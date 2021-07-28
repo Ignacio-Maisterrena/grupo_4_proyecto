@@ -3,20 +3,23 @@
 <%- include('partials/header')%>
 
 <div class="titulo-pagina"> 
+    
     <div class="contenedor-titulo"> 
     <h1>Regístrate</h1>
 
     </div>
     </div>
+  
 <section class="form-register">
     <h4> Estás a un paso de ser parte de esta comunidad! </h4>
-    <form action= "/auth/register" method= "POST">
+    <form action= "/auth/register" method= "POST" >
+    
         <input class="input-register" type="text" name= "nombre" id= "nombre" placeholder="Ingresa tu nombre de usuario"> 
         <input class="input-register" type="email" name= "email" id= "email" placeholder="Ingresa tu Email">
         <input class="input-register" type="password" name= "password" id= "contraseña" placeholder="Contraseña">
-        <input class="input-register" type="password" name= "password1" id= "contraseña" placeholder="Confirmar contraseña"> 
+        <input class="input-register" type="password" name= "password" id= "contraseña" placeholder="Confirmar contraseña"> 
         <button class="button-register" type= "submit"> Crear cuenta </button>
-
+        
     </form>
     
   

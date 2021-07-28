@@ -3,7 +3,7 @@
   <%- include('partials/header')%>
 
     <main>
-      <form action="/register" method="POST" class="createForm">
+      <form action="/product/carga" method="POST" class="createForm" enctype="multipart/form-data">
         <div class="controlFormulario">
           <input class="control" type="text" name="nombre" id="nombre" placeholder="Nombre del producto" required>
         </div>
@@ -14,7 +14,7 @@
 
         <div class="controlFormulario" id="foto">
           <h3>Seleccione una foto del producto</h3>
-          <input type="file" name="foto">
+          <input type="file" name="avatar">
         </div>
 
         <div class="controlFormulario">

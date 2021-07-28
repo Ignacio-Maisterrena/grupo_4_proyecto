@@ -9,6 +9,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const authController = require('./routes/auth');
+const productController = require ('./routes/product')
 const session = require('express-session');
 
 // view engine setup
@@ -20,20 +21,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(session({
+  secret: 'testsecret',
+  resave: false,
+  saveUninitialized: true
+}))
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use ('/auth', authController)
+app.use ('/auth', authController);
+app.use ('/product', productController);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
-app.use(session({secret: 'secreto'}));
-
-app.use(cookieParser());
-app.use (methodOverride("_method"));
 
 // error handler
 app.use(function(err, req, res, next) {

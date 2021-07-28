@@ -1,13 +1,4 @@
 const mainController = {
-    index: function (req,res) {
-        req.session.ultimaVisita = new Date().toISOString();
-        res.cookies("nombre", "juan");
-        
-    },
-
-    intro: function(req, res,next) {
-        res.render('intro')
-    },
     home: function(req, res,next) {
         res.render('home')
     },
@@ -15,7 +6,7 @@ const mainController = {
         res.render('ProductDetail')
     },
     carrito: function(req, res, next) {
-        res.render('carrito-compras')
+        res.render('cart')
     },
     login: function(req, res, next) {
         res.render('log-in')
@@ -46,9 +37,6 @@ const mainController = {
     },
     productsIdDelete: function(req, res, next) {
         res.render('productsIdDelete')
-    },
-    search: function (req,res) {
-        return res.send({nombre: req.session.nombre, ultimaVisita: req.session.ultimaVisita})
     },
    
 }
