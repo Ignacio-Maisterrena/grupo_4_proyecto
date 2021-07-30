@@ -2,6 +2,9 @@ const mainController = {
     home: function(req, res,next) {
         res.render('home')
     },
+    intro: function(req, res, next) {
+        res.render('intro')
+    },
     productDetail: function(req, res, next) {
         res.render('ProductDetail')
     },
@@ -15,7 +18,7 @@ const mainController = {
         res.render('register')
     },
     carga: function(req, res, next) {
-        res.render('formularioDeCargaYEdicion')
+        res.render('createProduct')
     },
     products: function(req, res, next) {
         res.render('products')

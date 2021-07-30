@@ -19,6 +19,9 @@ const uploadFile= multer({storage})
 
 
 
+
+
+
 const productController = {
     productCreate: (req, res, ) => {
         res.render ('formularioDeCargaYEdicion')
