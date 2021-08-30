@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "nombre": "Santiago",
+    "email": "santiagofontana00@gmail.com",
+    "password": "$2a$10$RKJDJRCFYo3LUyPmK.zgMuHPuMrBXzC5PrKGYctRAdnG7nGQwNc0a",
+    "avatar": "1630274614886_img_.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Pablo",
+    "email": "calvounclavito@gmail.com",
+    "password": "$2a$10$2JttYp6i2XWbU9woCqbKj.h0zM21R91CoARAK6AjKdkYpH4kGN8Ma",
+    "avatar": "1630329202442_img_.png"
+  }
+]

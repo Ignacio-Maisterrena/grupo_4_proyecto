@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "nombre": "busito.90",
+    "descripcion": "lorem ipsum",
+    "precio": "1234",
+    "Colores": "negro",
+    "Talles": [
+      "XS",
+      "S",
+      "M"
+    ],
+    "picture": "1630330743244_img_.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Chaleco Jean",
+    "descripcion": "lorem ipsum",
+    "precio": "1234",
+    "Colores": [
+      "rojo",
+      "negro"
+    ],
+    "Talles": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "picture": "1630330818453_img_.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Jean Mujer",
+    "descripcion": "lorem ipsum",
+    "precio": "1234",
+    "Colores": "negro",
+    "Talles": "M",
+    "picture": "1630330857757_img_.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Mono",
+    "descripcion": "lorem ipsum",
+    "precio": "1234",
+    "Colores": [
+      "rojo",
+      "negro"
+    ],
+    "Talles": [
+      "XS",
+      "S",
+      "M",
+      "L"
+    ],
+    "picture": "1630330902632_img_.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Remera London",
+    "descripcion": "lorem ipsum",
+    "precio": "1234",
+    "Colores": [
+      "rojo",
+      "azul"
+    ],
+    "Talles": "S",
+    "picture": "1630361040646_img_.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Short deportivo prueba 3",
+    "descripcion": "lorem ipsum",
+    "precio": "1234",
+    "Colores": "rojo",
+    "Talles": "XS",
+    "picture": "1630330995243_img_.jpg"
+  }
+]

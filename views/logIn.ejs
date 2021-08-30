@@ -1,0 +1,46 @@
+<%- include('partials/head')%>
+    <%- include('partials/header')%>
+
+        <div class="titulo-pagina">
+            <div class="contenedor-titulo">
+                <h1>Ingresa</h1>
+            </div>
+        </div>
+
+        <section class="form-login">
+            <h4> Bienvenid@ a SIN</h4>
+            <form action="login" method="POST">
+                <div>
+                    <label for="email">Ingresa tu Email:</label>
+                    <input class="input-login" type="email" name="email" id="email"
+                        value="<% if (locals.old) { %><%= old.email %><%} else { %><% } %>">
+                    <% if (locals.errors && errors.email){%>
+                        <div class="text-danger">
+                            <%= errors.email.msg%>
+                        </div>
+                        <%}%>
+                </div>
+                <div>
+                    <label for="contraseña">Ingresa tu contraseña:</label>
+                    <input class="input-login" type="password" name="password" id="contraseña">
+                    <% if (locals.errors && errors.password){%>
+                        <div class="text-danger">
+                            <%= errors.password.msg%>
+                        </div>
+                        <%}%>
+                </div>
+                <button class="button" type="submit"> Iniciar Sesión </button>
+                <div class="checkbox">
+
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Recuerdame</label>
+                </div>
+                <div class="restore">
+                    <a href="#" class="link-login"> ¿Olvidaste tu contraseña? </a>
+                </div>
+            </form>
+
+        </section>
+
+
+        <%- include('partials/footer')%>

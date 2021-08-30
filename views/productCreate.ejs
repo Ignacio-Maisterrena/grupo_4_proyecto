@@ -1,0 +1,95 @@
+<%- include('partials/head')%>
+  <link rel="stylesheet" href="/css/stylesFormularoiCarga.css">
+  <%- include('partials/header')%>
+
+    <main>
+      <form action="/products/create" method="POST" class="createForm" enctype="multipart/form-data">
+        <div class="controlFormulario">
+          <label for="nombre">Nombre del producto:</label>
+          <input class="control" type="text" name="nombre" id="nombre" required>
+          <% if (locals.errors && errors.nombre){%>
+            <div class="text-danger">
+              <%= errors.nombre.msg%>
+            </div>
+            <%}%>
+        </div>
+
+        <div class="controlFormulario">
+          <label for="descripcion">Descripcion:</label>
+          <input class="control" type="text" name="descripcion" id="descripcion" required>
+        </div>
+
+        <div class="controlFormulario" id="foto">
+          <h3>Seleccione una foto del producto</h3>
+          <input type="file" name="picture" id="picture">
+          <% if (locals.errors && errors.picture){%>
+            <div class="text-danger">
+              <%= errors.picture.msg%>
+            </div>
+            <%}%>
+        </div>
+
+        <div class="controlFormulario">
+          <label for="precio">Precio:</label>
+          <input class="control" type="text" name="precio" id="precio" required>
+        </div>
+
+        <div class="controlFormulario">
+          <h3>Colores</h3>
+
+          <div class="contenedor_carga">
+            <input type="checkbox" name="Colores" id="rojo" value="rojo">
+            <label for="rojo">Rojo</label>
+          </div>
+
+          <div class="contenedor_carga">
+            <input type="checkbox" name="Colores" id="azul" value="azul">
+            <label for="azul">Azul</label>
+          </div>
+
+          <div class="contenedor_carga">
+            <input type="checkbox" name="Colores" id="negro" value="negro">
+            <label for="negro">Negro</label>
+          </div>
+
+          <div class="contenedor_carga">
+            <input type="checkbox" name="Colores" id="blanco" value="blanco">
+            <label for="blanco">Blanco</label>
+          </div>
+        </div>
+
+        <div class="controlFormulario">
+          <h3>Talles</h3>
+
+          <div class="contenedor_carga">
+            <input type="checkbox" name="Talles" id="XS" value="XS">
+            <label for="XS">XS</label>
+          </div>
+
+          <div class="contenedor_carga">
+            <input type="checkbox" name="Talles" id="S" value="S">
+            <label for="S">S</label>
+          </div>
+
+          <div class="contenedor_carga">
+            <input type="checkbox" name="Talles" id="M" value="M">
+            <label for="M">M</label>
+          </div>
+
+          <div class="contenedor_carga">
+            <input type="checkbox" name="Talles" id="L" value="L">
+            <label for="L">L</label>
+          </div>
+
+          <div class="contenedor_carga">
+            <input type="checkbox" name="Talles" id="XL" value="XL">
+            <label for="XL">XL</label>
+          </div>
+        </div>
+
+        <button class="button" type="submit">Enviar</button>
+        <button class="button" type="reset">Borrar</button>
+      </form>
+    </main>
+
+    <%- include('partials/footer')%>

@@ -2,7 +2,7 @@ function guestMiddleware(req, res, next){
     if (req.session.userLogged== undefined){
         next();
     }else{
-        res.render('perfil');
+        res.send('Esta página es solo para visitas');
     }
 }
 module.exports = guestMiddleware;

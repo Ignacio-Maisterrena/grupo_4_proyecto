@@ -1,17 +1,51 @@
 <%- include('partials/head')%>
     <%- include('partials/header')%>
         <main>
-            <div class="ver contenedor">
-                <div class="cajaMujer">
-                    <img class="fotoMujer" src="\images\mono.jpg" alt="">
-                    <div class="mujer">Ver mujer</div>
-                </div>
-                <div class="cajaHombre">
-                    <img class="fotoHombre" src="\images\chaleco.jean.hombre.jpg" alt="">
-                    <div class="hombre">Ver hombre</div>
-                </div>
-
-            </div>
+            <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+                <!-- Overlay -->
+                <div class="overlay"></div>
+              
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#bs-carousel" data-slide-to="1"></li>
+                  <li data-target="#bs-carousel" data-slide-to="2"></li>
+                </ol>
+                
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                  <div class="item slides active">
+                    <div class="slide-1"></div>
+                    <div class="hero">
+                      <hgroup>
+                          <h1>We are creative</h1>        
+                          <h3>Get start your next awesome project</h3>
+                      </hgroup>
+                      <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                    </div>
+                  </div>
+                  <div class="item slides">
+                    <div class="slide-2"></div>
+                    <div class="hero">        
+                      <hgroup>
+                          <h1>We are smart</h1>        
+                          <h3>Get start your next awesome project</h3>
+                      </hgroup>       
+                      <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                    </div>
+                  </div>
+                  <div class="item slides">
+                    <div class="slide-3"></div>
+                    <div class="hero">        
+                      <hgroup>
+                          <h1>We are amazing</h1>        
+                          <h3>Get start your next awesome project</h3>
+                      </hgroup>
+                      <button class="btn btn-hero btn-lg" role="button">See all features</button>
+                    </div>
+                  </div>
+                </div> 
+              </div>
 
             <div class="productos">
                 <h2 class="oferta">Ofertas</h2>

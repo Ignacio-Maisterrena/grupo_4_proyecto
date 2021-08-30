@@ -1,31 +1,67 @@
-
 <%- include('partials/head')%>
-<%- include('partials/header')%>
+    <%- include('partials/header')%>
 
-<div class="titulo-pagina"> 
-    
-    <div class="contenedor-titulo"> 
-    <h1>Regístrate</h1>
+        <div class="titulo-pagina">
 
-    </div>
-    </div>
-  
-<section class="form-register">
-    <h4> Estás a un paso de ser parte de esta comunidad! </h4>
-    <form action= "/auth/register" method= "POST" >
-    
-        <input class="input-register" type="text" name= "nombre" id= "nombre" placeholder="Ingresa tu nombre de usuario"> 
-        <input class="input-register" type="email" name= "email" id= "email" placeholder="Ingresa tu Email">
-        <input class="input-register" type="password" name= "password" id= "contraseña" placeholder="Contraseña">
-        <input class="input-register" type="password" name= "password" id= "contraseña" placeholder="Confirmar contraseña"> 
-        <button class="button-register" type= "submit"> Crear cuenta </button>
-        
-    </form>
-    
-  
-</section>
+            <div class="contenedor-titulo">
+                <h1>Regístrate</h1>
 
-<%- include('partials/footer')%>
+            </div>
+        </div>
+
+        <section class="form-register">
+            <h4> Estás a un paso de ser parte de esta comunidad! </h4>
+            <form action="/users/register" method="POST" enctype="multipart/form-data">
+
+                <div>
+                    <label for="nombre">Ingresa tu nombre de usuario:</label>
+                    <input class="input-register <%= locals.errors && errors.nombre ? 'is-invalid' : null  %> "
+                        type="text" name="nombre" id="nombre"
+                        value="<% if (locals.old) { %><%= old.nombre %><%} else { %><% } %>">
+                    <% if (locals.errors && errors.nombre){%>
+                        <div class="text-danger">
+                            <%= errors.nombre.msg%>
+                        </div>
+                        <%}%>
+                </div>
+
+                <div>
+                    <label for="email">Ingresa tu Email:</label>
+                    <input class="input-register <%= locals.errors && errors.email ? 'is-invalid' : null  %>" type=""
+                        name="email" id="email" value="<% if (locals.old) { %><%= old.email %><%} else { %><% } %>">
+                    <% if (locals.errors && errors.email){%>
+                        <div class="text-danger">
+                            <%= errors.email.msg%>
+                        </div>
+                        <%}%>
+                </div>
+
+                <div>
+                    <label for="password">Ingresa tu contraseña:</label>
+                    <input class="input-register <%= locals.errors && errors.password ? 'is-invalid' : null  %>"
+                        type="password" name="password" id="contraseña" value=>
+                    <% if (locals.errors && errors.password){%>
+                        <div class="text-danger">
+                            <%= errors.password.msg%>
+                        </div>
+                        <%}%>
+                </div>
+
+                <div>
+                    <label>Imagen de perfil:</label>
+                    <input class="input-register" type="file" name="avatar" id="avatar">
+                    <% if (locals.errors && errors.avatar){%>
+                        <div class="text-danger">
+                            <%= errors.avatar.msg%>
+                        </div>
+                        <%}%>
+                </div>
+
+                <button class="button-register" type="submit"> Crear cuenta </button>
+
+            </form>
 
 
+        </section>
 
+        <%- include('partials/footer')%>

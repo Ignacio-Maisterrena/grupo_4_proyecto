@@ -1,19 +1,33 @@
+//Requerir path y fs
+var path = require('path');
+var fs = require('fs');
+
 var express = require('express');
 var router = express.Router();
-const multer= require ('multer')
-const storage= multer.diskStorage({
-destination: (req, file, cb)=>{
-    cb(null, 'images/prenda1.jpg');
-},
-filename: (req, file, cb)=>{
-    let filename= 'file'
-    cb(null, filename)
-}
-})
-const uploadFile= multer({storage})
-const productController = require ('../controllers/productController')
-/* GET users listing. */
-router.get('/carga', productController.productCreate)
-router.post ('/carga',uploadFile.single('avatar'), productController.productStore)
 
-module.exports= router
+//Requerir productsController
+const productController = require ('../controllers/productsController');
+
+//Requerir middleware de productsValidator
+const productsValidator = require('../middlewares/productsValidatorMiddleware.js');
+
+//Requerir middleware de multer
+const multer = require('../middlewares/multerProductMiddleware');
+
+/*ROUTES*/
+
+//Crear un producto
+router.get('/create', productController.productCreate)
+router.post ('/create', productsValidator, multer.single('picture'), productController.productStore);
+
+//Detalles de un producto
+router.get ("/:id", productController.productDetail);
+
+//Editar un producto
+router.get ("/:id/edit", productController.productsIdEdit);
+router.post ("/:id/edit", productsValidator, multer.single('picture'), productController.productsIdEdited);
+
+//Eliminar un producto
+router.delete ("/products/:id", productController.productsIdDelete);
+
+module.exports= router;

@@ -1,31 +1,43 @@
-
 <header>
     <nav>
         <div class="container-logo">
-            <img class="logo" src="images/LOGO.png" alt="">
+            <a href="/home">
+                <img class="logo" src="images/LOGO.png" alt="">
+            </a>
         </div>
         <ul>
             <li>
-                <a href="">Home</a>
+                <a href="/home">Home</a>
             </li>
             <li>
-                <a href="">Nosotros</a>
+                <a href="/ProductDetail">Productos</a>
             </li>
-            <li>
-                <a href="">Productos</a>
-            </li>
-            <li>
-                <a href="">Contacto</a>
-            </li>
-<li class="search-icon">
-    <input type="search" placeholder="Buscar">
-    <span class="fas fa-search"></span>
 
-</li>
-        
-        <a class="boton-mobile" href="">
-            <i class="fas fa-bars"></i>
-        </a>
-    </ul>
+            <% if (locals.isLogged) { %>
+                <li>
+                    <a href="/cart">Carrito</a>
+                </li>
+                <li>
+                    <a href="/users/logout">Log Out</a>
+                </li>
+                <% } else { %>
+
+                    <li>
+                        <a href="/users/register">Registrate</a>
+                    </li>
+                    <li>
+                        <a href="/users/logIn">LogIn</a>
+                    </li>
+                    <% } %>
+                        <li class="search-icon">
+                            <input type="search" placeholder="Buscar">
+                            <span class="fas fa-search"></span>
+
+                        </li>
+
+                        <a class="boton-mobile" href="">
+                            <i class="fas fa-bars"></i>
+                        </a>
+        </ul>
     </nav>
 </header>
