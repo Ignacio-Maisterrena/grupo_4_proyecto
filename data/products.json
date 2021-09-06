@@ -74,5 +74,14 @@
     "Colores": "rojo",
     "Talles": "XS",
     "picture": "1630330995243_img_.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Producto de prueba 2",
+    "descripcion": "adsfasdfas",
+    "precio": "1321321",
+    "Colores": "blanco",
+    "Talles": "XS",
+    "picture": "1630967894130_img_.jpg"
   }
 ]

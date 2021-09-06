@@ -17,7 +17,11 @@ const mainController = {
     
     cart: function(req, res, next) {
         res.render('cart')
-    }    
+    }, 
+    
+    productos: (req, res,) => {
+        return res.render('register')
+    },
 }
 
 module.exports = mainController;
