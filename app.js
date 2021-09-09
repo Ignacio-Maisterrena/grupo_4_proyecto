@@ -19,7 +19,7 @@ var cookieParser = require('cookie-parser');
 const methodOverride = require('method-override')
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.resolve( 'views'));
 app.set('view engine', 'ejs');
 
 //app.use(logger('dev'));
