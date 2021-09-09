@@ -68,7 +68,7 @@ const productController = {
             res.send('No se encontró el producto');
         }
 
-        res.render('productDetail', { productFound })
+        res.render('product_detail', { productFound })
     },
 
 
