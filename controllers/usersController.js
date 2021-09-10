@@ -25,7 +25,11 @@ const usersController = {
 
     registerStore: (req, res) => {
 
-        let errors = validationResult(req);
+        console.log(req.body);
+
+        let errors = validationResult(req.body);
+
+        console.log(errors.array());
 
         //En el caso de que hayan errores
         if (!errors.isEmpty()) {

@@ -12,5 +12,12 @@
     "email": "calvounclavito@gmail.com",
     "password": "$2a$10$2JttYp6i2XWbU9woCqbKj.h0zM21R91CoARAK6AjKdkYpH4kGN8Ma",
     "avatar": "1630329202442_img_.png"
+  },
+  {
+    "id": 3,
+    "nombre": "dsaf",
+    "email": "asdfasdf",
+    "password": "$2a$10$2hR/neoANYNThEIrPJWGH.KbXI9uva.bS9NndsHIWlExK1i3vlT4K",
+    "avatar": "1631231847341_img_.sql"
   }
 ]
