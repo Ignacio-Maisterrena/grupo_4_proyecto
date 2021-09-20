@@ -9,10 +9,10 @@
             </div>
         </div>
 
-        <section class="form-register">
+        <section  class="form-register">
             <h4> Estás a un paso de ser parte de esta comunidad! </h4>
-            <form action="/users/register" method="POST" enctype="multipart/form-data">
-
+            <form id="form2" action="/users/register" method="POST" enctype="multipart/form-data">
+                <img src="https://c1.staticflickr.com/9/8046/8082447203_14ec1579b4_z.jpg" title="avatar" alt="">
                 <div>
                     <label for="nombre">Ingresa tu nombre de usuario:</label>
                     <input class="input-register <%= locals.errors && errors.nombre ? 'is-invalid' : null  %> "
@@ -56,12 +56,14 @@
                         </div>
                         <%}%>
                 </div>
+                <div id="errores" class="text-danger">
 
+                </div>
                 <button class="button-register" type="submit"> Crear cuenta </button>
 
             </form>
 
 
         </section>
-
+        <script src="/js/register.js " type="text/javascript"></script>
         <%- include('partials/footer')%>
