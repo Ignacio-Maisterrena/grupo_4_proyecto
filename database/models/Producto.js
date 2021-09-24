@@ -33,5 +33,25 @@ module.exports = (sequelize, dataTypes) => {
     { tableName: "productos"},
     { timestamps: false} 
 )
+
+    Producto.associate = function(models) {
+        Producto.hasMany(models.talles, {
+            as: "talles",
+            foreignKey: "idSize"
+        });
+    }
+    Producto.associate = function(models) {
+        Producto.hasMany(models.colores, {
+            as: "colores",
+            foreignKey: "idColor"
+        });
+    }
+    Producto.associate = function(models) {
+        Producto.hasMany(models.categorias, {
+            as: "categorias",
+            foreignKey: "idCategory"
+        });
+    }
+
     return Producto
 }

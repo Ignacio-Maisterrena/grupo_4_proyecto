@@ -23,9 +23,19 @@ module.exports = (sequelize, dataTypes) => {
         idPermisos: {
             type: dataTypes.INTEGER
         }
-    }, 
-    { tableName: "credenciales de usuarios"},
-    { timestamps: false} 
-)
+    },
+        { tableName: "credenciales de usuarios" },
+        { timestamps: false }
+    )
+
+
+    CredencialDeUsuario.associate = function (models) {
+        CredencialDeUsuario.hasMany(models.permisos, {
+            as: "permisosUsuarios",
+            foreignKey: "idPermisos"
+        });
+    }
+
+
     return CredencialDeUsuario
 }

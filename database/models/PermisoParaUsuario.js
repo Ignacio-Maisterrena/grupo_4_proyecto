@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 const sequelize = require("../database");
 
 module.exports = (sequelize, dataTypes) => {
-    const PermisoParaUsuario = sequelize.define("permisos para usuarios", {
+    const PermisoParaUsuario = sequelize.define("permisos", {
         id: {
             type: dataTypes.INTEGER,
             autoIncrement: true,
@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER
         }
     }, 
-    { tableName: "permisos para usuarios"},
+    { tableName: "permisos"},
     { timestamps: false} 
 )
     return PermisoParaUsuario
