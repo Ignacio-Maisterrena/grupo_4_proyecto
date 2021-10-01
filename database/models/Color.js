@@ -1,8 +1,5 @@
-const Sequelize = require("sequelize");
-const sequelize = require("../database");
-
 module.exports = (sequelize, dataTypes) => {
-    const Color = sequelize.define("colores", {
+    const Color = sequelize.define("Color", {
         id: {
             type: dataTypes.INTEGER,
             autoIncrement: true,
@@ -11,9 +8,17 @@ module.exports = (sequelize, dataTypes) => {
         color: {
             type: dataTypes.STRING
         }
-    }, 
-    { tableName: "colores"},
-    { timestamps: false} 
-)
-    return Color   
+    },
+        { tableName: "tabla_colores" , timestamps: false }
+        
+    )
+
+    Color.associate = function (models) {
+        Color.hasMany(models.Producto, {
+            as: "productos",
+            foreignKey: "id_color"
+        });
+    }
+
+    return Color
 }

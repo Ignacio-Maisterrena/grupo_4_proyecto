@@ -1,8 +1,5 @@
-const Sequelize = require("sequelize");
-const sequelize = require("../database");
-
 module.exports = (sequelize, dataTypes) => {
-    const Talle = sequelize.define("talles", {
+    const Talle = sequelize.define("Talle", {
         id: {
             type: dataTypes.INTEGER,
             autoIncrement: true,
@@ -11,9 +8,16 @@ module.exports = (sequelize, dataTypes) => {
         talle: {
             type: dataTypes.STRING
         }
-    }, 
-    { tableName: "talles"},
-    { timestamps: false} 
-)
-    return Talle   
-}
+    },
+        { tableName: "tabla_talles",  timestamps: false  }
+        
+    )
+
+    Talle.associate = function (models) {
+        Talle.hasMany(models.Producto, {
+            as: "productos",
+            foreignKey: "id_talle"
+        });
+    }
+        return Talle
+    }

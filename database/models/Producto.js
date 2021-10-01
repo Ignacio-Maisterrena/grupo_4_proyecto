@@ -1,55 +1,47 @@
-const Sequelize = require("sequelize");
-const sequelize = require("../database");
-
 module.exports = (sequelize, dataTypes) => {
-    const Producto = sequelize.define("productos", {
+    const Producto = sequelize.define("Producto", {
         id: {
             type: dataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
-        nameProduct: {
+        nombre_producto: {
             type: dataTypes.STRING
         },
-        image: {
+        imagen: {
             type: dataTypes.STRING
         },
-        price: {
+        precio: {
             type: dataTypes.INTEGER
         },
-        idSize: {
+        id_talle: {
             type: dataTypes.INTEGER
         },
-        idColor: {
+        id_color: {
             type: dataTypes.INTEGER
         },
-        idCategory: {
+        id_categoria: {
             type: dataTypes.INTEGER
         },
-        description: {
+        descripcion: {
             type: dataTypes.TEXT 
         }
     }, 
-    { tableName: "productos"},
-    { timestamps: false} 
+    { tableName: "tabla_productos", timestamps: false}
 )
 
     Producto.associate = function(models) {
-        Producto.hasMany(models.talles, {
-            as: "talles",
-            foreignKey: "idSize"
+        Producto.belongsTo(models.Talle, {
+            as: "talle",
+            foreignKey: "id_talle"
         });
-    }
-    Producto.associate = function(models) {
-        Producto.hasMany(models.colores, {
-            as: "colores",
-            foreignKey: "idColor"
+        Producto.belongsTo(models.Color, {
+            as: "color",
+            foreignKey: "id_color"
         });
-    }
-    Producto.associate = function(models) {
-        Producto.hasMany(models.categorias, {
-            as: "categorias",
-            foreignKey: "idCategory"
+        Producto.belongsTo(models.Categoria, {
+            as: "categoria",
+            foreignKey: "id_categoria"
         });
     }
 

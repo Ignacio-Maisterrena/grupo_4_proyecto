@@ -8,7 +8,7 @@ const { body, validationResult } = require('express-validator')
 const validations = [
     body('email').isEmail().withMessage('Debe ser un email valido'),
     body('password').isLength({ min: 6 }).withMessage('Debe tener al menos 6 caracteres'),
-    body('nombre').isString().withMessage('Debe tener al menos 2 caracteres').isLength({ min: 2 }).withMessage('Debe tener al menos 2 caracteres'),
+    body('nombre').isString().isLength({ min: 2 }).withMessage('Debe tener al menos 2 caracteres'),
     body('avatar').custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif']

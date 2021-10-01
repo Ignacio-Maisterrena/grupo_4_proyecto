@@ -12,13 +12,39 @@ const { validationResult } = require('express-validator');
 //Requerir el modelo de productos
 const product = require('../models/productsModel');
 
+//importar la base de datos y sequelize
+let db = require('../database/models')
+
+
+
+
 
 //CONTROLLER
 const productController = {
 
     //Crear un producto
     productCreate: (req, res,) => {
-        res.render('productCreate')
+        // res.render('productCreate')
+
+        //include: ["talle", "color", "categoria"]
+        db.Producto.create({
+            nombre_producto: "prueba2",
+            imagen: "dfs",
+            precio: "1654",
+            id_talle:"1",
+            id_color: "1",
+            descripcion: "lore ipsum",
+            id_categoria: "1"
+        })
+            .then((resultado) => {
+
+                return res.render('cart');
+            })
+            .catch((error) => {
+                console.log(error);
+                res.send('Salio mal\n' + error)
+            })
+
     },
     productStore: (req, res) => {
         let errors = validationResult(req);
@@ -107,7 +133,7 @@ const productController = {
 
         product.edit(productToEdit);
 
-        res.redirect('/products/'+id);
+        res.redirect('/products/' + id);
     },
 
 

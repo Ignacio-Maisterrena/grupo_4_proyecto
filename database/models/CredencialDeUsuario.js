@@ -1,5 +1,3 @@
-const Sequelize = require("sequelize");
-const sequelize = require("../database");
 
 module.exports = (sequelize, dataTypes) => {
     const CredencialDeUsuario = sequelize.define("credenciales de usuarios", {
@@ -24,8 +22,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER
         }
     },
-        { tableName: "credenciales de usuarios" },
-        { timestamps: false }
+        { tableName: "tabla_credenciales_usuarios",  timestamps: false }
     )
 
 
