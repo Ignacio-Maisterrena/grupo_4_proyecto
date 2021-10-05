@@ -18,16 +18,18 @@ const multer = require('../middlewares/multerProductMiddleware');
 
 //Crear un producto
 router.get('/create', productController.productCreate)
-router.post ('/create', productsValidator, multer.single('picture'), productController.productStore);
+router.post ('/create', multer.single('picture'), productController.productStore);
+//router.post ('/create', productsValidator, multer.single('picture'), productController.productStore);
 
 //Detalles de un producto
 router.get ("/:id", productController.productDetail);
 
 //Editar un producto
 router.get ("/:id/edit", productController.productsIdEdit);
-router.post ("/:id/edit", productsValidator, multer.single('picture'), productController.productsIdEdited);
+router.post ("/:id/edit", multer.single('picture'), productController.productsIdEdited);
+//router.post ("/:id/edit", productsValidator, multer.single('picture'), productController.productsIdEdited);
 
 //Eliminar un producto
-router.delete ("/products/:id", productController.productsIdDelete);
+router.get ("/:id/delete", productController.productsIdDelete);
 
 module.exports= router;

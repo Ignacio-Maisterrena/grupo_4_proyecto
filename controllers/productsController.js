@@ -16,36 +16,15 @@ const product = require('../models/productsModel');
 let db = require('../database/models')
 
 
-
-
-
 //CONTROLLER
 const productController = {
 
     //Crear un producto
     productCreate: (req, res,) => {
-        // res.render('productCreate')
-
-        //include: ["talle", "color", "categoria"]
-        db.Producto.create({
-            nombre_producto: "prueba2",
-            imagen: "dfs",
-            precio: "1654",
-            id_talle:"1",
-            id_color: "1",
-            descripcion: "lore ipsum",
-            id_categoria: "1"
-        })
-            .then((resultado) => {
-
-                return res.render('cart');
-            })
-            .catch((error) => {
-                console.log(error);
-                res.send('Salio mal\n' + error)
-            })
+        res.render('productCreate')
 
     },
+
     productStore: (req, res) => {
         let errors = validationResult(req);
 
@@ -54,32 +33,39 @@ const productController = {
             return res.render('productCreate', { errors: errors.mapped(), old: req.body })
         }
 
-        //Chequear si ese nombre ya se usó
-        let productInDB = product.findByField('nombre', req.body.nombre);
-        if (productInDB) {
-            return res.render('productCreate', {
-                errors: {
-                    nombre: {
-                        msg: 'Este nombre ya fue registrado'
-                    }
-                },
-                old: req.body
-            });
-        }
+        //        //Chequear si ese nombre ya se usó
+        //        let productInDB = product.findByField('nombre', req.body.nombre);
+        //        if (productInDB) {
+        //            return res.render('productCreate', {
+        //                errors: {
+        //                    nombre: {
+        //                        msg: 'Este nombre ya fue registrado'
+        //                    }
+        //                },
+        //                old: req.body
+        //            });
+        //        }
 
         //En el caso de que NO hayan errores
-        const productToCreate = {
-            ...req.body,
-            picture: req.file.filename
-        }
 
-        console.log(req.body);
+        //Crear el producto en la base de datos
+        db.Producto.create({
+            nombre_producto: req.body.nombre,
+            imagen: req.file.filename,
+            precio: req.body.precio,
+            id_talle: 1,
+            id_color: 1,
+            descripcion: req.body.descripcion,
+            id_categoria: 1,
 
-        //crear el producto en el JSON
-        product.create(productToCreate);
-
-        //Redirigir al home
-        return res.redirect('/home');
+        })
+            .then(() => {
+                //Redirigir al home
+                return res.redirect('/home');
+            })
+            .catch((e) => {
+                res.send(e);
+            })
     },
 
 
@@ -88,13 +74,13 @@ const productController = {
         var id = req.params.id;
 
         //Buscar el producto entre los guardados
-        let productFound = product.findByPk(id);
-
-        if (!productFound) {
-            res.send('No se encontró el producto');
-        }
-
-        res.render('product_detail', { productFound })
+        db.Producto.findByPk(id, { include: ["talle", "color", "categoria"] })
+            .then((resultado) => {
+                res.render('product_detail', { productFound: resultado })
+            })
+            .catch((e) => {
+                res.send(e);
+            })
     },
 
 
@@ -104,17 +90,14 @@ const productController = {
 
         var id = req.params.id;
 
-        //Buscar el producto entre los guardados
-        let productFound = product.findByPk(id);
-
-        res.render('productEdit', { productFound })
+        //Buscar el producto entre los guardados y mandarlo a la vista
+        db.Producto.findByPk(id, { include: ["talle", "color", "categoria"] }).then((resultado) => {
+            res.render('productEdit', { productFound: resultado })
+        })
     },
     productsIdEdited: function (req, res, next) {
 
         var id = parseInt(req.params.id);
-
-        //Buscar el producto entre los guardados
-        let productFound = product.findByPk(id);
 
         let errors = validationResult(req);
 
@@ -125,15 +108,27 @@ const productController = {
 
 
         //En el caso de que NO hayan errores
+
+        //Guardar los datos recibidos
         const productToEdit = {
-            id: id,
             ...req.body,
-            picture: req.file.filename
+            imagen: req.file.filename
         }
 
-        product.edit(productToEdit);
+        //Actualizar la base de datos
+        db.Producto.update(productToEdit,
+            {
+                where: { id: id }
+            }
 
-        res.redirect('/products/' + id);
+        )
+            .then(() => {
+                res.redirect('/products/' + id);
+            })
+
+            .catch((e) => {
+                res.send(e)
+            })
     },
 
 
@@ -142,7 +137,16 @@ const productController = {
 
         var id = req.params.id;
 
-        product.delete(id);
+        db.Producto.destroy({
+            where: { id: id }
+        })
+            .then(() => {
+                res.send('Producto número ' + id + ' eliminado con éxito');
+            })
+
+            .catch((e) => {
+                res.send(e)
+            })
     },
 
 
