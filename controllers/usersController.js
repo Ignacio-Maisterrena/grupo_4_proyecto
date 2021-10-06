@@ -67,15 +67,12 @@ const usersController = {
 
         })
             .then(() => {
-                //Redirigir al home
-                return res.redirect('/home');
+                //Redirigir al login
+                return res.redirect('/users/login');
             })
             .catch((e) => {
                 res.send(e);
             })
-
-        //Redirigir al home
-       // return res.redirect('/users/login');
     },
 
     loginCreate: (req, res) => {
