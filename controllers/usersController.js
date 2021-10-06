@@ -16,6 +16,8 @@ const { validationResult } = require('express-validator');
 //Requerir el modelo de usuarios
 const user = require('../models/userModel');
 
+//importar la base de datos y sequelize
+let db = require('../database/models')
 
 //CONTROLLER
 const usersController = {
@@ -24,8 +26,6 @@ const usersController = {
     },
 
     registerStore: (req, res) => {
-
-        console.log(req.body);
 
         let errors = validationResult(req.body);
 
@@ -36,33 +36,46 @@ const usersController = {
             return res.render('register', { errors: errors.mapped(), old: req.body })
         }
 
-        //Chequear si ese mail ya se usó
-        let userInDB = user.findByField('email', req.body.email);
-        if (userInDB) {
-            return res.render('register', {
-                errors: {
-                    email: {
-                        msg: 'Este Email ya fue registrado'
-                    }
-                },
-                old: req.body
-            });
-        }
+      // //Chequear si ese mail ya se usó
+      // let userInDB = user.findByField('email', req.body.email);
+      // if (userInDB) {
+      //     return res.render('register', {
+      //         errors: {
+      //             email: {
+      //                 msg: 'Este Email ya fue registrado'
+      //             }
+      //         },
+      //         old: req.body
+      //     });
+      // }
 
         //En el caso de que NO hayan errores
-        const usersToCreate = {
-            ...req.body,
-            avatar: req.file.filename
-        }
+    
 
         //Encritpar la contraseña
-        usersToCreate.password = bcrypt.hashSync(req.body.password, saltRounds)
+        let password = bcrypt.hashSync(req.body.password, saltRounds)
+
+        console.log(req.file.filename);
 
         //crear el usuario en el JSON
-        user.create(usersToCreate);
+        db.Usuario.create({
+            nombre: req.body.nombre,
+            avatar: req.file.filename,
+            correo_electronico: req.body.email,
+            contraseña: password,  
+            id_permisos:   2 
+
+        })
+            .then(() => {
+                //Redirigir al home
+                return res.redirect('/home');
+            })
+            .catch((e) => {
+                res.send(e);
+            })
 
         //Redirigir al home
-        return res.redirect('/users/login');
+       // return res.redirect('/users/login');
     },
 
     loginCreate: (req, res) => {

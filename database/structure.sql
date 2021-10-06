@@ -3,10 +3,10 @@ CREATE SCHEMA `database_db` ;
 CREATE TABLE `database_db`.`tabla_credenciales_usuarios` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nombre` LONGTEXT NULL,
-  `apellido` LONGTEXT NULL,
+  `avatar` LONGTEXT NULL,
   `correo_electronico` LONGTEXT NULL,
   `contraseña` LONGTEXT NULL,
-  `id_permisos` TINYINT(5) NULL,
+  `id_permisos` TINYINT(5) NULL ,
   PRIMARY KEY (`id`));
 
 CREATE TABLE `database_db`.`tabla_permisos_usuarios` (
