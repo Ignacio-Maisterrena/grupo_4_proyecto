@@ -1,39 +1,49 @@
 //Requerir path y fs
 var path = require('path');
-var fs = require ('fs');
+var fs = require('fs');
 
 //importar la base de datos y sequelize
 let db = require('../database/models')
 
 const mainController = {
-    users: function(req, res,next) {
-        db.Usuario.findAll()
-        .then((resultados)=>{
-            res.json(resultados)
-        })
-    },
-
-    user: function(req, res, next) {
+    users: function (req, res, next) {
         db.Usuario.findAll({
-            include: [{association: "permisos"}]
+            include: [{ association: "permisos" }]
         })
-        .then((resultados)=>{
-            res.json(resultados)
-        })
+            .then((resultados) => {
+                res.json(resultados)
+            })
     },
 
-    products: function(req, res, next) {
-        db.Producto.findAll()
-        .then((resultados)=>{
-            res.json(resultados)
+    user: function (req, res, next) {
+        db.Usuario.findByPk(req.params.id, {
+            include: [{ association: "permisos" }]
         })
-        
+            .then((resultado) => {
+                res.json(resultado)
+            })
     },
-    product: function(req, res, next) {
-        db.Producto.findByPk(req.params.id)
-        .then((resultados)=>{
-            res.json(resultados)
-        })
+
+    products: function (req, res, next) {
+        db.Producto.findAll(
+            { include: ["talle", "color", "categoria"] }
+        )
+            .then((resultados) => {
+                res.json(resultados)
+            })
+
+    },
+    product: function (req, res, next) {
+        db.Producto.findByPk(req.params.id,
+            { include: ["talle", "color", "categoria"] })
+
+            .then((resultado) => {
+                res.json(resultado)
+            })
+
+            .catch((e) => {
+                res.send(e);
+            })
     }
 }
 
