@@ -1,24 +1,24 @@
 
 module.exports = (sequelize, dataTypes) => {
-    const CredencialDeUsuario = sequelize.define("credenciales de usuarios", {
+    const Usuario = sequelize.define("Usuario", {
         id: {
             type: dataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
-        name: {
+        nombre: {
             type: dataTypes.STRING
         },
-        lastName: {
+        apellido: {
             type: dataTypes.STRING
         },
-        email: {
+        correo_electronico: {
             type: dataTypes.STRING
         },
-        password: {
+        contraseña: {
             type: dataTypes.STRING
         },
-        idPermisos: {
+        id_permisos: {
             type: dataTypes.INTEGER
         }
     },
@@ -26,13 +26,13 @@ module.exports = (sequelize, dataTypes) => {
     )
 
 
-    CredencialDeUsuario.associate = function (models) {
-        CredencialDeUsuario.hasMany(models.permisos, {
-            as: "permisosUsuarios",
-            foreignKey: "idPermisos"
+    Usuario.associate = function (models) {
+        Usuario.belongsTo(models.Permisos, {
+            as: "permisos",
+            foreignKey: "id_permisos"
         });
     }
 
 
-    return CredencialDeUsuario
+    return Usuario
 }

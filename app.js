@@ -9,6 +9,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const productsRouter = require('./routes/product')
+var apisRouter = require('./routes/apis');
 const session = require('express-session');
 
 //Requerir los middlewares
@@ -36,6 +37,7 @@ app.use(userLoggedMiddleware);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+app.use('/api', apisRouter);
 app.use(methodOverride('_method'));
 
 // catch 404 and forward to error handler
