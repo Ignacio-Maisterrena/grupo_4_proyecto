@@ -25,7 +25,7 @@ const usersController = {
         return res.render('register')
     },
 
-    registerStore: (req, res) => {
+    registerStore: async (req, res) => {
 
         let errors = validationResult(req.body);
 
@@ -36,21 +36,23 @@ const usersController = {
             return res.render('register', { errors: errors.mapped(), old: req.body })
         }
 
-      // //Chequear si ese mail ya se usó
-      // let userInDB = user.findByField('email', req.body.email);
-      // if (userInDB) {
-      //     return res.render('register', {
-      //         errors: {
-      //             email: {
-      //                 msg: 'Este Email ya fue registrado'
-      //             }
-      //         },
-      //         old: req.body
-      //     });
-      // }
+        //Chequear si ese mail ya se usó
+        let userInDB = await db.Usuario.findOne({
+            where: { email: req.body.email }
+        });
+        if (userInDB.length > 1) {
+            return res.render('register', {
+                errors: {
+                    email: {
+                        msg: 'Este Email ya fue registrado'
+                    }
+                },
+                old: req.body
+            });
+        }
 
         //En el caso de que NO hayan errores
-    
+
 
         //Encritpar la contraseña
         let password = bcrypt.hashSync(req.body.password, saltRounds)
@@ -62,8 +64,8 @@ const usersController = {
             nombre: req.body.nombre,
             avatar: req.file.filename,
             correo_electronico: req.body.email,
-            contraseña: password,  
-            id_permisos:   2 
+            contraseña: password,
+            id_permisos: 2
 
         })
             .then(() => {
@@ -83,7 +85,7 @@ const usersController = {
 
         //Buscar el usuario a luguearse
         const userToLogin = user.findByField('email', req.body.email)
-        
+
         if (!userToLogin) {
             return res.render('logIn', {
                 errors: {
