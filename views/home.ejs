@@ -1,78 +1,95 @@
 <%- include('partials/head')%>
-    <%- include('partials/header')%>
-        <main>
-            <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
-                <!-- Overlay -->
-                <div class="overlay"></div>
-              
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                  <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#bs-carousel" data-slide-to="1"></li>
-                  <li data-target="#bs-carousel" data-slide-to="2"></li>
-                </ol>
-                
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                  <div class="item slides active">
-                    <div class="slide-1"></div>
-                    <div class="hero">
-                      <hgroup>
-                          <h1>We are creative</h1>        
-                          <h3>Get start your next awesome project</h3>
-                      </hgroup>
-                      <button class="btn btn-hero btn-lg" role="button">See all features</button>
-                    </div>
-                  </div>
-                  <div class="item slides">
-                    <div class="slide-2"></div>
-                    <div class="hero">        
-                      <hgroup>
-                          <h1>We are smart</h1>        
-                          <h3>Get start your next awesome project</h3>
-                      </hgroup>       
-                      <button class="btn btn-hero btn-lg" role="button">See all features</button>
-                    </div>
-                  </div>
-                  <div class="item slides">
-                    <div class="slide-3"></div>
-                    <div class="hero">        
-                      <hgroup>
-                          <h1>We are amazing</h1>        
-                          <h3>Get start your next awesome project</h3>
-                      </hgroup>
-                      <button class="btn btn-hero btn-lg" role="button">See all features</button>
-                    </div>
-                  </div>
-                </div> 
-              </div>
+  <%- include('partials/header')%>
+    <main>
+      <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+        <!-- Overlay -->
+        <div class="overlay"></div>
 
-            <div class="productos">
-                <h2 class="oferta">Ofertas</h2>
-                <div class="contenedor productos">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#bs-carousel" data-slide-to="1"></li>
+          <li data-target="#bs-carousel" data-slide-to="2"></li>
+        </ol>
 
-                    <article>
-
-                        <img class="fotoProducto" src="/images/mono.jpg" alt="">
-                        <h3 class="nombreProducto">Nombre producto</h3>
-                        <div class="agregarCarrito">Agregar al carrito</div>
-                    </article>
-
-                    <article>
-                        <img class="fotoProducto" src="\images\remera.london.hombre.jpg" alt="">
-                        <h3 class="nombreProducto">Nombre producto</h3>
-                        <div class="agregarCarrito">Agregar al carrito</div>
-                    </article>
-
-                    <article>
-                        <img class="fotoProducto" src="\images\chaleco.jean.hombre.jpg" alt="">
-                        <h3 class="nombreProducto">Nombre producto</h3>
-                        <div class="agregarCarrito">Agregar al carrito</div>
-                    </article>
-
-                </div>
-
-
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item slides active">
+            <div class="slide-1"></div>
+            <div class="hero">
+              <hgroup>
+                <h1>We are creative</h1>
+                <h3>Get start your next awesome project</h3>
+              </hgroup>
+              <button class="btn btn-hero btn-lg" role="button">See all features</button>
             </div>
-        </main>
-        <%- include('partials/footer')%>
+          </div>
+          <div class="item slides">
+            <div class="slide-2"></div>
+            <div class="hero">
+              <hgroup>
+                <h1>We are smart</h1>
+                <h3>Get start your next awesome project</h3>
+              </hgroup>
+              <button class="btn btn-hero btn-lg" role="button">See all features</button>
+            </div>
+          </div>
+          <div class="item slides">
+            <div class="slide-3"></div>
+            <div class="hero">
+              <hgroup>
+                <h1>We are amazing</h1>
+                <h3>Get start your next awesome project</h3>
+              </hgroup>
+              <button class="btn btn-hero btn-lg" role="button">See all features</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="productos">
+
+
+        <div class="oferta">Prendas destacadas</div>
+
+        <div class="contenedor productos">
+
+          <section class="section-body">
+            <article>
+              <img src="../images/products/1630330743244_img_.jpg" width="360" height="500">
+              <p class="precio">$1.234</p>
+              <p class="descuento">40% OFF</p>
+              <a href="/products/1" class="NombreProducto">Busito 90</a>
+            </article>
+            <article>
+              <img src="../images/products/1630330818453_img_.jpg" width="360" height="500">
+              <p class="precio">$1.234</p>
+              <p class="descuento">20% OFF</p>
+              <a href="/products/2" class="NombreProducto">Chaleco Jean</a>
+            </article>
+            <article>
+              <img src="../images/products/1630330857757_img_.jpg" width="360" height="500">
+              <p class="precio">$1.234</p>
+              <p class="descuento">10% OFF</p>
+              <a href="/products/3" class="NombreProducto">Jean Mujer</a>
+            </article>
+            <article>
+              <img src="../images/products/1630330902632_img_.jpg" width="360" height="500">
+              <p class="precio">$1.234</p>
+              <p class="descuento">5% OFF</p>
+              <a href="/products/4" class="NombreProducto"> Mono </a>
+            </article>
+          </section>
+
+
+          <div class="div-boton-ver-todo">
+            <button class="button-ver-todo" onclick="location.href='/productos'" type="submit"> Ver todo
+            </button>
+          </div>
+
+        </div>
+
+
+      </div>
+    </main>
+    <%- include('partials/footer')%>
