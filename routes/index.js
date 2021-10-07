@@ -22,14 +22,4 @@ router.get('/', mainController.home);
 
 router.get('/cart', loggedMiddleware, mainController.cart);
 
-router.get('/productos', mainController.productos);
-
-
-
-
-
-
-
-
-
 module.exports = router;
