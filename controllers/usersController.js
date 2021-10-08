@@ -36,20 +36,21 @@ const usersController = {
             return res.render('register', { errors: errors.mapped(), old: req.body })
         }
 
-        //Chequear si ese mail ya se usó
-        let userInDB = await db.Usuario.findOne({
-            where: { email: req.body.email }
-        });
-        if (userInDB.length > 1) {
-            return res.render('register', {
-                errors: {
-                    email: {
-                        msg: 'Este Email ya fue registrado'
-                    }
-                },
-                old: req.body
-            });
-        }
+      //Chequear si ese mail ya se usó
+      let userInDB = await db.Usuario.findOne({
+          where: { correo_electronico: req.body.email }
+      });
+      console.log(userInDB);
+      if (userInDB) {
+          return res.render('register', {
+              errors: {
+                  email: {
+                      msg: 'Este Email ya fue registrado'
+                  }
+              },
+              old: req.body
+          });
+      }
 
         //En el caso de que NO hayan errores
 
@@ -57,10 +58,8 @@ const usersController = {
         //Encritpar la contraseña
         let password = bcrypt.hashSync(req.body.password, saltRounds)
 
-        console.log(req.file.filename);
-
         //crear el usuario en el JSON
-        db.Usuario.create({
+        await db.Usuario.create({
             nombre: req.body.nombre,
             avatar: req.file.filename,
             correo_electronico: req.body.email,
@@ -68,13 +67,9 @@ const usersController = {
             id_permisos: 2
 
         })
-            .then(() => {
-                //Redirigir al login
-                return res.redirect('/users/login');
-            })
-            .catch((e) => {
-                res.send(e);
-            })
+
+        //Redirigir al login
+        return res.redirect('/users/login');
     },
 
     loginCreate: (req, res) => {
