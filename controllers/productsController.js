@@ -154,6 +154,43 @@ const productController = {
 
 }
 
-
+// const productosCarrito = [
+//     {   id: 1,
+//         nombre_producto: "Buzo vintage",
+//         imagen: "../images/products/1630330743244_img_.jpg",
+//         precio: "$3200",
+//         id_talle: 1,
+//         id_color: 1,
+//         descripcion: "bucito primaveral",
+//         id_catgoria: 1
+//     },
+//     {   id: 2,
+//         nombre_producto: "Chaleco de jean",
+//         imagen: "../images/products/1630330818453_img_.jpg",
+//         precio: "$4500",
+//         id_talle: 1,
+//         id_color: 1,
+//         descripcion: "chaleco de jean sin género",
+//         id_catgoria: 1
+//     },
+//     {   id: 3,
+//         nombre_producto: "Jean de mujer",
+//         imagen: "../images/products/1630330857757_img_.jpg",
+//         precio: "$5200",
+//         id_talle: 1,
+//         id_color: 1,
+//         descripcion: "jean ancho con mucha onda",
+//         id_catgoria: 1
+//     },
+//     {   id: 4,
+//         nombre_producto: "Mono",
+//         imagen: "../images/products/1630330902632_img_.jpg",
+//         precio: "$3600",
+//         id_talle: 1,
+//         id_color: 1,
+//         descripcion: "mono al cuerpo",
+//         id_catgoria: 1
+//     }
+// ]
 
 module.exports = productController
