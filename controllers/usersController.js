@@ -76,10 +76,12 @@ const usersController = {
         return res.render("logIn");
     },
 
-    loginStore: (req, res) => {
-
+    loginStore: async (req, res) => {
+console.log(req.body.email)
         //Buscar el usuario a luguearse
-        const userToLogin = user.findByField('email', req.body.email)
+        const userToLogin = await db.Usuario.findOne({
+            where: {correo_electronico: req.body.email}
+        })//user.findByField('email', req.body.email)
 
         if (!userToLogin) {
             return res.render('logIn', {
@@ -93,12 +95,12 @@ const usersController = {
         }
 
         //Validar la contraseña
-        const comparacion = bcrypt.compareSync(req.body.password, userToLogin.password);
+        const comparacion = bcrypt.compareSync(req.body.password, userToLogin["contraseña"]);
 
         //Logueo o envió el error
         if (comparacion) {
             //Elimino la password del userToLogin por seguridad
-            delete userToLogin.password;
+            delete userToLogin["contraseña"];
 
             req.session.userLogged = userToLogin;
             if (req.body.remember) {
