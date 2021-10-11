@@ -69,7 +69,7 @@
     "id": 5,
     "nombre": "Remera London",
     "descripcion": "lorem ipsum",
-    "precio": "1234",
+    "precio": "1200",
     "Colores": [
       "rojo",
       "azul"
@@ -85,9 +85,9 @@
   },
   {
     "id": 6,
-    "nombre": "Short deportivo prueba 3",
+    "nombre": "Short deportivo ",
     "descripcion": "lorem ipsum",
-    "precio": "1234",
+    "precio": "2500",
     "Colores": "rojo",
     "Talles": [
       "XS",
