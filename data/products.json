@@ -3,12 +3,14 @@
     "id": 1,
     "nombre": "Buzo vintage",
     "descripcion": "lorem ipsum",
-    "precio": "1234",
+    "precio": "3200",
     "Colores": "negro",
     "Talles": [
       "XS",
       "S",
-      "M"
+      "M",
+      "L",
+      "XL"
     ],
     "picture": "1630330743244_img_.jpg"
   },
@@ -16,12 +18,14 @@
     "id": 2,
     "nombre": "Chaleco Jean",
     "descripcion": "lorem ipsum",
-    "precio": "1234",
+    "precio": "4500",
     "Colores": [
       "rojo",
       "negro"
     ],
     "Talles": [
+      "XS",
+      "S",
       "M",
       "L",
       "XL"
@@ -32,16 +36,22 @@
     "id": 3,
     "nombre": "Jean Mujer",
     "descripcion": "lorem ipsum",
-    "precio": "1234",
+    "precio": "5200",
     "Colores": "negro",
-    "Talles": "M",
+    "Talles": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
     "picture": "1630330857757_img_.jpg"
   },
   {
     "id": 4,
     "nombre": "Mono",
     "descripcion": "lorem ipsum",
-    "precio": "1234",
+    "precio": "3600",
     "Colores": [
       "rojo",
       "negro"
@@ -50,7 +60,8 @@
       "XS",
       "S",
       "M",
-      "L"
+      "L",
+      "XL"
     ],
     "picture": "1630330902632_img_.jpg"
   },
@@ -63,7 +74,13 @@
       "rojo",
       "azul"
     ],
-    "Talles": "S",
+    "Talles": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
     "picture": "1630361040646_img_.jpg"
   },
   {
@@ -72,7 +89,13 @@
     "descripcion": "lorem ipsum",
     "precio": "1234",
     "Colores": "rojo",
-    "Talles": "XS",
+    "Talles": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
     "picture": "1630330995243_img_.jpg"
   },
   {
@@ -81,7 +104,13 @@
     "descripcion": "adsfasdfas",
     "precio": "1321321",
     "Colores": "blanco",
-    "Talles": "XS",
+    "Talles": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
     "picture": "1630967894130_img_.jpg"
   }
 ]
