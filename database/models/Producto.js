@@ -35,13 +35,23 @@ module.exports = (sequelize, dataTypes) => {
             as: "talle",
             foreignKey: "id_talle"
         });
+
         Producto.belongsTo(models.Color, {
             as: "color",
             foreignKey: "id_color"
         });
+
         Producto.belongsTo(models.Categoria, {
             as: "categoria",
             foreignKey: "id_categoria"
+        });
+
+        Producto.belongsToMany(models.Usuario, {
+            as: "carrito",
+            through: "tabla_auxiliar",
+            foreignKey: "id_product",
+            otherKey: "id_user",
+            timestamps: false
         });
     }
 

@@ -37,6 +37,12 @@ CREATE TABLE `database_db`.`tabla_colores` (
   `color` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
 
+CREATE TABLE `database_db`.`tabla_auxiliar` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `id_user` INT NOT NULL,
+  `id_product` INT NOT NULL,
+  PRIMARY KEY (`id`));
+
 CREATE TABLE `database_db`.`tabla_talles` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `talle` VARCHAR(45) NULL,
