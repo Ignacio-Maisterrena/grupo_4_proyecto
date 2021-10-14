@@ -1,16 +1,25 @@
-//Requerir el modelo de usuario
-const user = require('../models/userModel');
+//importar la base de datos y sequelize
+let db = require('../database/models')
 
 function userLoggedMiddleware(req, res, next) {
 
     res.locals.isLogged = false;
 
     let emailFromCookie = req.cookies.userEmail;
-    let userFromCookie = user.findByField('email', emailFromCookie);
-    
 
-    if (userFromCookie) {
-        req.session.userLogged = userFromCookie
+    let userFromCookie = {}
+ 
+    if (emailFromCookie) {
+        async function buscarEnDb() {
+            const userToLogin = await db.Usuario.findOne({
+                where: { correo_electronico: emailFromCookie }
+            })
+
+            userFromCookie = userToLogin
+
+            req.session.userLogged = userFromCookie
+        }
+        buscarEnDb()
     };
 
     if (req.session && req.session.userLogged) {
