@@ -221,9 +221,10 @@ HEADER
 */
     
     header{
+       
         width: 100%;
-        background: rgb(134, 134, 134);
-        height: 70px;
+  background-color: #292c2f;
+          height: 70px;
         box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
     }
     
@@ -286,7 +287,7 @@ HEADER
         display: none;
     }
     
-    @media (max-width: 1080px){ 
+    @media (max-width: 1180px){ 
         header .boton-mobile{
             display: inline;
             color: white;
@@ -324,12 +325,18 @@ banner
 .bottom img{
   height: 100px;
   width: 100%;
-  margin-bottom: 90px;
 }
 
 /*
 FOOTER
 */    
+
+.container-logo-footer{
+width: 20vh;
+ display: flex;
+
+}
+
 footer{
   position: relative;
   bottom: 0;
@@ -474,6 +481,11 @@ footer{
   
  @media (max-width: 880px) {
   
+  .container-logo-footer{
+    margin:auto;
+   
+    }
+
   .footer-distributed{
   font: bold 14px sans-serif;
   
@@ -1401,10 +1413,38 @@ text-align: center;
 }
 
 .button-ver-todo{
-  background-color: #03264C;
-  border-radius: 5px;
-  border: 0;
-  color: white;
-  padding: 5px 10px;
-  font-size: 40px;
+  width:300px;
+      font-size: 24px;
+        cursor: pointer;
+        background: #DD4F4F ; /* color de fondo */
+        color: white; /* color de fuente */
+        border: 0px solid #DD4F4F; /* tamaño y color de borde */
+        padding: 16px 20px;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        display: inline-block;
+}
+.button-ver-todo::after {
+  content: "";
+  background: #69D1E2; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.button-ver-todo:hover::after{
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
 }
