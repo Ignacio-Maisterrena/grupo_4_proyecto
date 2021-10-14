@@ -1,7 +1,7 @@
 //importar la base de datos y sequelize
 let db = require('../database/models')
 
-function userLoggedMiddleware(req, res, next) {
+async function userLoggedMiddleware(req, res, next) {
 
     res.locals.isLogged = false;
 
@@ -10,16 +10,15 @@ function userLoggedMiddleware(req, res, next) {
     let userFromCookie = {}
  
     if (emailFromCookie) {
-        async function buscarEnDb() {
-            const userToLogin = await db.Usuario.findOne({
-                where: { correo_electronico: emailFromCookie }
-            })
+        
+        const userToLogin = await db.Usuario.findOne({
+            where: { correo_electronico: emailFromCookie }
+        })
 
-            userFromCookie = userToLogin
+        userFromCookie = userToLogin
 
-            req.session.userLogged = userFromCookie
-        }
-        buscarEnDb()
+        req.session.userLogged = userFromCookie
+        
     };
 
     if (req.session && req.session.userLogged) {
@@ -28,7 +27,9 @@ function userLoggedMiddleware(req, res, next) {
         //Poner los datos de Sesion en una variable global para las vistas
         res.locals.userLogged = req.session.userLogged
     };
-
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+    console.log(">>>>>>", req.session.userLogged)
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
     next();
 };
 module.exports = userLoggedMiddleware;
