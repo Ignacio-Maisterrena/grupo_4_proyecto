@@ -7,6 +7,7 @@ var path = require('path');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var cartRouter = require('./routes/cart');
 var usersRouter = require('./routes/users');
 const productsRouter = require('./routes/product')
 var apisRouter = require('./routes/apis');
@@ -35,6 +36,7 @@ app.use(session({
 app.use(cookieParser());
 app.use(userLoggedMiddleware);
 app.use('/', indexRouter);
+app.use('/cart', cartRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/api', apisRouter);

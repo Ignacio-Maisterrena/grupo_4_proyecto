@@ -25,7 +25,7 @@ const productController = {
 
     },
 
-    productStore: (req, res) => {
+    productStore: async (req, res) => {
         let errors = validationResult(req);
 
         //En el caso de que hayan errores
@@ -33,18 +33,20 @@ const productController = {
             return res.render('productCreate', { errors: errors.mapped(), old: req.body })
         }
 
-        //        //Chequear si ese nombre ya se usó
-        //        let productInDB = product.findByField('nombre', req.body.nombre);
-        //        if (productInDB) {
-        //            return res.render('productCreate', {
-        //                errors: {
-        //                    nombre: {
-        //                        msg: 'Este nombre ya fue registrado'
-        //                    }
-        //                },
-        //                old: req.body
-        //            });
-        //        }
+        //Chequear si ese nombre ya se usó
+        let productInDB = await db.Producto.findOne({
+            where: { nombre_producto: req.body.nombre }
+        });
+        if (productInDB) {
+            return res.render('productCreate', {
+                errors: {
+                    nombre: {
+                        msg: 'Este nombre ya fue registrado'
+                    }
+                },
+                old: req.body
+            });
+        }
 
         //En el caso de que NO hayan errores
 

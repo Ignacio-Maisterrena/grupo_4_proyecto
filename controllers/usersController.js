@@ -36,21 +36,21 @@ const usersController = {
             return res.render('register', { errors: errors.mapped(), old: req.body })
         }
 
-      //Chequear si ese mail ya se usó
-      let userInDB = await db.Usuario.findOne({
-          where: { correo_electronico: req.body.email }
-      });
-      console.log(userInDB);
-      if (userInDB) {
-          return res.render('register', {
-              errors: {
-                  email: {
-                      msg: 'Este Email ya fue registrado'
-                  }
-              },
-              old: req.body
-          });
-      }
+        //Chequear si ese mail ya se usó
+        let userInDB = await db.Usuario.findOne({
+            where: { correo_electronico: req.body.email }
+        });
+        console.log(userInDB);
+        if (userInDB) {
+            return res.render('register', {
+                errors: {
+                    email: {
+                        msg: 'Este Email ya fue registrado'
+                    }
+                },
+                old: req.body
+            });
+        }
 
         //En el caso de que NO hayan errores
 
@@ -77,11 +77,11 @@ const usersController = {
     },
 
     loginStore: async (req, res) => {
-console.log(req.body.email)
+
         //Buscar el usuario a luguearse
         const userToLogin = await db.Usuario.findOne({
-            where: {correo_electronico: req.body.email}
-        })//user.findByField('email', req.body.email)
+            where: { correo_electronico: req.body.email }
+        })
 
         if (!userToLogin) {
             return res.render('logIn', {
@@ -100,9 +100,10 @@ console.log(req.body.email)
         //Logueo o envió el error
         if (comparacion) {
             //Elimino la password del userToLogin por seguridad
-            delete userToLogin["contraseña"];
+            userToLogin["contraseña"] = ""
 
             req.session.userLogged = userToLogin;
+            
             if (req.body.remember) {
                 res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
             }
