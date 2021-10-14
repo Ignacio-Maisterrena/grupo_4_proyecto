@@ -85,6 +85,8 @@ ul.slider li:target{
       }
 
       .fade-carousel {
+        display: flex;
+        flex-wrap: wrap;
         position: relative;
         height: 100vh;
     }
@@ -180,22 +182,29 @@ ul.slider li:target{
     .fade-carousel .slides .slide-1, 
     .fade-carousel .slides .slide-2,
     .fade-carousel .slides .slide-3 {
-      height: 100vh;
-      background-size: cover;
+      height: 100%;
+      background-size:cover;
       background-position: center center;
       background-repeat: no-repeat;
       margin-top: 30px;
+      max-width: 100%;
    
     }
     .fade-carousel .slides .slide-1 {
-      background-image:url("/images/Chabon.jpg") }
+      background-image:url("/images/1.jpg"); 
+      max-width: 100%;
+
+     }
     
   
       .fade-carousel .slides .slide-2 {
-      background-image:url('/images/2.jpeg')
+      background-image:url('/images/2.jpg');
+      max-width: 100%;
+
     }
     .fade-carousel .slides .slide-3 {
-      background-image:url('/images/minita.jpg')
+      background-image:url('/images/3.jpg');
+      max-width: 100%;
     }
     
     /********************************/
@@ -308,9 +317,15 @@ banner
 
 .banner-top{
   margin-top: -15px;
-  margin-bottom: -90px;
-}
 
+  height: 150px;
+  margin-bottom: -100px;
+}
+.bottom img{
+  height: 100px;
+  width: 100%;
+  margin-bottom: 90px;
+}
 
 /*
 FOOTER
@@ -1335,16 +1350,18 @@ width: 49%;
   display:flex;
      margin: 10px;
     background-color: white;
-    width: 45%;
     width: 100%;
-   justify-content: space-between;
+    align-items: center;
+  flex-flow:wrap ;
+   justify-content: space-around;
+   flex-direction:row;
 }
 
 article {
   margin: 5px;
   border: solid 1px black;
   padding: 8px;
-  margin: 10px;
+
   box-shadow:  0px 0px 10px rgb(100, 100, 100);
   flex-grow: 0.5;
   background-color: white;

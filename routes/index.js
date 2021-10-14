@@ -20,6 +20,9 @@ router.get('/home', mainController.home);
 
 router.get('/', mainController.home);
 
-router.get('/cart', loggedMiddleware, mainController.cart);
+router.get('/cart', mainController.cart);
+
+//router.get('/cart', loggedMiddleware, mainController.cart);
+
 
 module.exports = router;

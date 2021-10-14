@@ -8,7 +8,7 @@ let db = require('../database/models')
 const mainController = {
     users: function (req, res, next) {
         db.Usuario.findAll({
-            include: [{ association: "permisos" }]
+            include: ["permisos", "carrito" ]
         })
             .then((resultados) => {
                 res.json(resultados)
@@ -17,7 +17,7 @@ const mainController = {
 
     user: function (req, res, next) {
         db.Usuario.findByPk(req.params.id, {
-            include: [{ association: "permisos" }]
+            include: ["permisos", "carrito" ]
         })
             .then((resultado) => {
                 res.json(resultado)
@@ -26,7 +26,7 @@ const mainController = {
 
     products: function (req, res, next) {
         db.Producto.findAll(
-            { include: ["talle", "color", "categoria"] }
+            { include: ["talle", "color", "categoria", "carrito"] }
         )
             .then((resultados) => {
                 res.json(resultados)
@@ -35,7 +35,7 @@ const mainController = {
     },
     product: function (req, res, next) {
         db.Producto.findByPk(req.params.id,
-            { include: ["talle", "color", "categoria"] })
+            { include: ["talle", "color", "categoria", "carrito"] })
 
             .then((resultado) => {
                 res.json(resultado)
