@@ -1,70 +1,69 @@
-  
-  
-
 <%- include('partials/head')%>
-<%- include('partials/header')%>
-  
-<div class="titulo-pagina"> 
-  <div class="contenedor-titulo"> 
-  <h1>Carrito de Compras</h1>
-  </div>
-  </div>
+  <%- include('partials/header')%>
+
+    <div class="titulo-pagina">
+      <div class="contenedor-titulo">
+        <h1>Carrito de Compras</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="carrito">
+        <div class="productos">
+          <% for(let item of productos) { %>
 
 
-  <div class="container">
-        <div class="carrito">
-          <div class="productos">
-            <div class="producto">
-                <img src="images/prenda1.jpg">    
-            <div class="detalles-producto">
-                  <h2 class="nombre-producto">producto.nombre <%= productos[1].nombre_producto %> </h2>
-                  <h3 class="precio-producto">1500$</h3>
-                  <h4 class="oferta-producto">30%</h4>
-                  <p class="cantidad">Cantidad: <input value="1" name="">
-                <p class="borrar-producto">
-                 <i class="fas fa-trash"></i>
-                 <span class="borrar">Borrar</span>
-                </div>
-            </div>
+
 
             <div class="producto">
-              <img src="images/prenda2.jpg">    
-          <div class="detalles-producto">
-                <h2 class="nombre-producto">Hoodie Rogue XXL</h2>
-                <h3 class="precio-producto">2800$</h3>
-                <h4 class="oferta-producto">15%</h4>
+              <img src="images/products/<%= item.imagen %> >
+              <div class="detalles-producto">
+
+
+
+                <h2 class="nombre-producto">
+                  <%= item.nombre_producto %>
+                </h2>
+                <h3 class="precio-producto">
+                  <%= item.precio %>
+                </h3>
+                <h4 class="oferta-producto">
+                  <%= item.oferta %>
+                </h4>
                 <p class="cantidad">Cantidad: <input value="1" name="">
-              <p class="borrar-producto">
-               <i class="fas fa-trash"></i>
-               <span class="borrar">Borrar</span>
+                <p class="borrar-producto">
+                  <i class="fas fa-trash"></i>
+                  <span class="borrar">Borrar</span>
               </div>
-          </div>
+            </div>
+            <% } %>
 
 
-          </div>
-
-          <div class="total">
-            <p>
-              <span> Total</span>
-              <span>$4300</span>
-            </p>
-            <p>
-              <span>Número de Items</span>
-              <span>2 </span>
-
-            </p>
-
-            <button class="button" type= "submit"> Checkout</button>
-            
 
 
-          </div>
+
+        </div>
+
+        <div class="total">
+          <p>
+            <span> Total</span>
+            <span>$4300</span>
+          </p>
+          <p>
+            <span>Número de Items</span>
+            <span>2 </span>
+
+          </p>
+
+          <button class="button" type="submit"> Checkout</button>
+
+
+
+        </div>
 
 
       </div>
 
-  </div>
+    </div>
 
-
-
-  <%- include('partials/footer')%>
+    <%- include('partials/footer')%>
