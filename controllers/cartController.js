@@ -13,7 +13,6 @@ const cartController = {
 
     cart: async (req, res, next) => {
 
-        console.log(" en el carrito probando" + req.session.userLogged);
 
         const usuarioCarrito = await db.Usuario.findByPk(req.session.userLogged.id, {
             include: ["permisos", "carrito" ]

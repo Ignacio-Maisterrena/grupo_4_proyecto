@@ -16,6 +16,8 @@ const multer = require('../middlewares/multerProductMiddleware');
 
 /*ROUTES*/
 
+router.get('/', productController.products)
+
 //Crear un producto
 router.get('/create', productController.productCreate)
 router.post ('/create', multer.single('picture'), productController.productStore);

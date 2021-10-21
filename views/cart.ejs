@@ -12,28 +12,23 @@
         <div class="productos">
           <% for(let item of productos) { %>
 
-
-
-
             <div class="producto">
-              <img src="images/products/<%= item.imagen %> >
+              <img src="images/products/<%= item.imagen %>">
               <div class="detalles-producto">
-
-
 
                 <h2 class="nombre-producto">
                   <%= item.nombre_producto %>
                 </h2>
                 <h3 class="precio-producto">
-                  <%= item.precio %>
+                  $<%= item.precio %>
                 </h3>
-                <h4 class="oferta-producto">
-                  <%= item.oferta %>
+                <h4>
+                  <%= item.descripcion %>
                 </h4>
                 <p class="cantidad">Cantidad: <input value="1" name="">
                 <p class="borrar-producto">
                   <i class="fas fa-trash"></i>
-                  <span class="borrar">Borrar</span>
+                 <!--<span class="borrar">Borrar</span>--> 
               </div>
             </div>
             <% } %>
@@ -47,11 +42,17 @@
         <div class="total">
           <p>
             <span> Total</span>
-            <span>$4300</span>
+          <span>
+                
+$5800
+                  
+            </span>
           </p>
           <p>
             <span>Número de Items</span>
-            <span>2 </span>
+            <span>
+              <%= productos.length %>
+            </span>
 
           </p>
 

@@ -86,6 +86,15 @@ const productController = {
     },
 
 
+    products: function (req, res, next) {
+        //  res.render('home')
+  
+          db.Producto.findAll( { include: ["talle", "color", "categoria"] })
+              .then((resultado) => {
+                  res.render('home2', { products: resultado })
+              })
+      },
+
     //Editar un producto
 
     productsIdEdit: function (req, res, next) {

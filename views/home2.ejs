@@ -1,0 +1,87 @@
+<%- include('partials/head')%>
+  <%- include('partials/header')%>
+
+
+      <div class="productos">
+
+
+        <div class="oferta">Prendas destacadas</div>
+
+        <div class="contenedor productos">
+
+          <section class="section-body">
+
+            <% for(let item of products) { %>
+
+
+              <article>
+                <img src="../images/products/<%= item.imagen %>" width="360" height="500">
+                <a href="/products/<%= item.id %>" class="NombreProducto"><%= item.nombre_producto %></a>
+                <p class="precio"><%= item.precio %></p>
+                
+              </article>
+
+            <%}  %> 
+
+
+
+
+
+            <article>
+              <img src="../images/products/musculosa.jpg" width="360" height="500">
+              <a href="/products/1" class="NombreProducto">Musculosa</a>
+              <p class="precio">$3.200</p>
+              <p class="descuento">40% OFF</p>
+            </article>
+
+
+            <article>
+              <img src="../images/products/campera.jpg" width="360" height="500">
+              <a href="/products/2" class="NombreProducto">Campera</a>
+              <p class="precio">$4.500</p>
+              <p class="descuento">20% OFF</p>
+              
+            </article>
+            <article>
+              <img src="../images/products/chaleco.jpg" width="360" height="500">
+              <a href="/products/3" class="NombreProducto">Chaleco</a>
+              <p class="precio">$5.200</p>
+              <p class="descuento">10% OFF</p>
+              
+            </article>
+            <article>
+              <img src="../images/products/sweater.jpg" width="360" height="500">
+              <a href="/products/4" class="NombreProducto"> Sweater </a>
+              <p class="precio">$3.600</p>
+              <p class="descuento">5% OFF</p>
+              
+            </article>
+            <article>
+              <img src="../images/products/camuflada.jpg" width="360" height="500">
+              <a href="/products/4" class="NombreProducto"> Campera Camuflada </a>
+              <p class="precio">$3.600</p>
+              <p class="descuento">5% OFF</p>
+              
+            </article>
+            <article>
+              <img src="../images/products/vestido.jpg" width="360" height="500">
+              <a href="/products/4" class="NombreProducto"> Vestido </a>
+              <p class="precio">$3.600</p>
+              <p class="descuento">5% OFF</p>
+              
+            </article>
+          
+          </section>
+
+
+          <div class="div-boton-ver-todo">
+           <!--<button class="button-ver-todo" onclick="location.href='/products'" type="submit"> Ver todo
+            </button>-->  
+          </div>
+
+        </div>
+
+
+      </div>
+    </main>
+    <%- include('partials/footer')%>
