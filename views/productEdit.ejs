@@ -6,7 +6,7 @@
       <form action="/products/<%= productFound.id %>/edit" method="POST" class="createForm" enctype="multipart/form-data">
         <div class="controlFormulario">
           <label for="nombre">Nombre del producto:</label>
-          <input class="control" type="text" name="nombre" id="nombre" value="<%= productFound.nombre_producto %>" required>
+          <input class="control" type="text" name="nombre" id="nombre" value="<%= productFound.nombre_producto %>" >
           <% if (locals.errors && errors.nombre){%>
             <div class="text-danger">
               <%= errors.nombre.msg%>
@@ -16,7 +16,7 @@
 
         <div class="controlFormulario">
           <label for="descripcion">Descripcion:</label>
-          <input class="control" type="text" name="descripcion" id="descripcion" value="<%= productFound.descripcion %>" required>
+          <input class="control" type="text" name="descripcion" id="descripcion" value="<%= productFound.descripcion %>" >
         </div>
 
         <div class="controlFormulario" id="foto">
@@ -31,7 +31,7 @@
 
         <div class="controlFormulario">
           <label for="precio">Precio:</label>
-          <input class="control" type="text" name="precio" id="precio" value="<%= productFound.precio %>" required>
+          <input class="control" type="text" name="precio" id="precio" value="<%= productFound.precio %>" >
         </div>
 
         <div class="controlFormulario">

@@ -19,15 +19,16 @@ const loggedMiddleware = require('../middlewares/loggedMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 
 //Requerir middleware de formValidator
-const formValidator = require('../middlewares/formValidatorMiddleware.js');
-
+const formValidator = require('../middlewares/formValidatorMiddleware');
 
 /*ROUTES*/
 
 //Registrar un nuevo usuario
 router.get('/register', guestMiddleware, usersController.registerCreate);
-router.post('/register', multer.single('avatar'), usersController.registerStore);
+router.post('/register', formValidator, multer.single('avatar'), usersController.registerStore);
+
 //router.post('/register', formValidator, multer.single('avatar'), usersController.registerStore);
+
 
 //Loguear un usuario
 router.get('/login', guestMiddleware, usersController.loginCreate);

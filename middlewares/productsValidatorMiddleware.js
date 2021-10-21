@@ -6,8 +6,8 @@ var fs = require('fs');
 const { body, validationResult } = require('express-validator')
 
 const validations = [
-    body('nombre').isString().isLength({ min: 2 }).withMessage('Debe tener al menos 2 caracteres'),
-    body('descripcion').isString().isLength({ min: 20 }).withMessage('Debe tener al menos 20 caracteres'),
+    body('nombre').isLength({ min: 2 }).withMessage('Debe tener al menos 2 caracteres'),
+    body('descripcion').isLength({ min: 20 }).withMessage('Debe tener al menos 20 caracteres'),
     body('picture').custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif']

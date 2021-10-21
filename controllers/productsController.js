@@ -26,6 +26,13 @@ const productController = {
     },
 
     productStore: async (req, res) => {
+        //  return res.send({
+        //      body: req.body,
+        //      file: req.file
+
+        //  }
+        //  )
+
         let errors = validationResult(req);
 
         //En el caso de que hayan errores
@@ -88,12 +95,12 @@ const productController = {
 
     products: function (req, res, next) {
         //  res.render('home')
-  
-          db.Producto.findAll( { include: ["talle", "color", "categoria"] })
-              .then((resultado) => {
-                  res.render('home2', { products: resultado })
-              })
-      },
+
+        db.Producto.findAll({ include: ["talle", "color", "categoria"] })
+            .then((resultado) => {
+                res.render('home2', { products: resultado })
+            })
+    },
 
     //Editar un producto
 
@@ -114,7 +121,11 @@ const productController = {
 
         //En el caso de que hayan errores
         if (!errors.isEmpty()) {
-            return res.render('productEdit', { errors: errors.mapped(), old: req.body, productFound })
+            //Buscar el producto entre los guardados y mandarlo a la vista
+            db.Producto.findByPk(id, { include: ["talle", "color", "categoria"] }).then((resultado) => {
+                res.render('productEdit', { errors: errors.mapped(), productFound: resultado })
+            })
+
         }
 
 

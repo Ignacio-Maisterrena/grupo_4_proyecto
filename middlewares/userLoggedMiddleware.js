@@ -27,9 +27,7 @@ async function userLoggedMiddleware(req, res, next) {
         //Poner los datos de Sesion en una variable global para las vistas
         res.locals.userLogged = req.session.userLogged
     };
-    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-    console.log(">>>>>>", req.session.userLogged)
-    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+
     next();
 };
 module.exports = userLoggedMiddleware;

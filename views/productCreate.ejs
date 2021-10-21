@@ -6,7 +6,7 @@
       <form action="/products/create" method="POST" class="createForm" enctype="multipart/form-data">
         <div class="controlFormulario">
           <label for="nombre">Nombre del producto:</label>
-          <input class="control" type="text" name="nombre" id="nombre" required>
+          <input class="control" type="text" name="nombre" id="nombre" value="<% if (locals.old) { %><%= old.nombre %><%} else { %><% } %>">
           <% if (locals.errors && errors.nombre){%>
             <div class="text-danger">
               <%= errors.nombre.msg%>
@@ -16,12 +16,17 @@
 
         <div class="controlFormulario">
           <label for="descripcion">Descripcion:</label>
-          <input class="control" type="text" name="descripcion" id="descripcion" required>
+          <input class="control" type="text" name="descripcion" id="descripcion" value="<% if (locals.old) { %><%= old.descripcion %><%} else { %><% } %>">
+          <% if (locals.errors && errors.descripcion){%>
+            <div class="text-danger">
+              <%= errors.descripcion.msg%>
+            </div>
+            <%}%>
         </div>
 
         <div class="controlFormulario" id="foto">
           <h3>Seleccione una foto del producto</h3>
-          <input type="file" name="picture" id="picture">
+          <input type="file" name="picture" id="picture" >
           <% if (locals.errors && errors.picture){%>
             <div class="text-danger">
               <%= errors.picture.msg%>
@@ -31,7 +36,7 @@
 
         <div class="controlFormulario">
           <label for="precio">Precio:</label>
-          <input class="control" type="text" name="precio" id="precio" required>
+          <input class="control" type="text" name="precio" id="precio" >
         </div>
 
         <div class="controlFormulario">
