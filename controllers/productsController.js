@@ -113,7 +113,7 @@ const productController = {
             res.render('productEdit', { productFound: resultado })
         })
     },
-    productsIdEdited: function (req, res, next) {
+    productsIdEdited: async function (req, res, next) {
 
         var id = parseInt(req.params.id);
 
@@ -122,9 +122,10 @@ const productController = {
         //En el caso de que hayan errores
         if (!errors.isEmpty()) {
             //Buscar el producto entre los guardados y mandarlo a la vista
-            db.Producto.findByPk(id, { include: ["talle", "color", "categoria"] }).then((resultado) => {
-                res.render('productEdit', { errors: errors.mapped(), productFound: resultado })
-            })
+            await db.Producto.findByPk(id, { include: ["talle", "color", "categoria"] })
+                .then((resultado) => {
+                    res.render('productEdit', { errors: errors.mapped(), productFound: resultado })
+                })
 
         }
 

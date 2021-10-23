@@ -36,7 +36,12 @@
 
         <div class="controlFormulario">
           <label for="precio">Precio:</label>
-          <input class="control" type="text" name="precio" id="precio" >
+          <input class="control" type="text" name="precio" id="precio" value="<% if (locals.old) { %><%= old.precio %><%} else { %><% } %>" >
+          <% if (locals.errors && errors.precio){%>
+            <div class="text-danger">
+              <%= errors.precio.msg%>
+            </div>
+            <%}%>
         </div>
 
         <div class="controlFormulario">

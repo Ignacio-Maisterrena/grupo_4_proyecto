@@ -17,6 +17,11 @@
         <div class="controlFormulario">
           <label for="descripcion">Descripcion:</label>
           <input class="control" type="text" name="descripcion" id="descripcion" value="<%= productFound.descripcion %>" >
+          <% if (locals.errors && errors.descripcion){%>
+            <div class="text-danger">
+              <%= errors.descripcion.msg%>
+            </div>
+            <%}%>
         </div>
 
         <div class="controlFormulario" id="foto">
@@ -32,6 +37,11 @@
         <div class="controlFormulario">
           <label for="precio">Precio:</label>
           <input class="control" type="text" name="precio" id="precio" value="<%= productFound.precio %>" >
+          <% if (locals.errors && errors.precio){%>
+            <div class="text-danger">
+              <%= errors.precio.msg%>
+            </div>
+            <%}%>
         </div>
 
         <div class="controlFormulario">
