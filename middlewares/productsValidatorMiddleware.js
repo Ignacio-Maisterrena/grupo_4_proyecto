@@ -11,16 +11,10 @@ const validations = [
     body('precio').isInt().withMessage('Debe ser un número'),
     body('picture').custom((value, { req }) => {
         let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png', '.gif']
-
-        if (!file) {
-            throw new Error('Se debe seleccionar una imagen')
-        } else {
-            let fileExtension = path.extname(file.originalname)
-            if (!acceptedExtensions.includes(fileExtension)) {
-                throw new Error('Las extensiones permitidas son ' + acceptedExtensions.join(', '))
-            }
-        }
+       
+      if (!file) {
+            throw new Error('Se debe seleccionar una imagen, los formatos permitidos son: .png, .jpg y .jpeg')
+      }
         return true;
     })
 ];

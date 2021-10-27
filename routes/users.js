@@ -27,7 +27,7 @@ const formValidator = require('../middlewares/formValidatorMiddleware');
 router.get('/register', guestMiddleware, usersController.registerCreate);
 router.post('/register', multer.single('avatar'), formValidator, usersController.registerStore);
 
-//router.post('/register', formValidator, multer.single('avatar'), usersController.registerStore);
+
 
 
 //Loguear un usuario
